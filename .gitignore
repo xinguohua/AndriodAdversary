@@ -8,6 +8,13 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+data/
+*.csv
+malwareclassification/models/*
+malwareclassification/defensive_distillation/*
+malwareclassification/logs/*
+*.h5
+*.joblib
 build/
 develop-eggs/
 dist/
