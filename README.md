@@ -49,10 +49,11 @@ DNN模型训练了13种架构
 ## evaluate_models.py
 评价所有机器学习和DNN架构
 
-目前svm knn有点问题
+选出三种架构的DNN架构，准确率高的，FNR低的，介于两者之间的。
+
+
 
 明日目标
-* 评价  写完文字部分
 * fgsm攻击改完 
 * jsmf攻击 deepfool攻击 onepixel攻击集成
 * 画图
