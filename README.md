@@ -1,7 +1,7 @@
 ## Research on Android malware detection based on ML models & the weakness of DNNs in adversarial examples.
 
 
-# Analyze
+# 一 Analyze
 实验分析文件夹
 ## CalculateFeature.py
 计算全部软件和恶意软件的特征数量，1分位数，均值，3分位数，中位数
@@ -13,7 +13,7 @@
 训练数据 测试数据 一行测试数据
 
 
-# malwareclassification
+# 二 malwareclassification
 
 ## nn_grid_search.py
 
@@ -52,9 +52,43 @@ DNN模型训练了13种架构
 选出三种架构的DNN架构，准确率高的，FNR低的，介于两者之间的。
 
 
+# 三 oneFeature文件夹
+实施oneFeature攻击 
+## tutorials文件夹
+过程
 
-明日目标
-* fgsm攻击改完 
-* jsmf攻击 deepfool攻击 onepixel攻击集成
-* 画图
-* 文字部分
+* 在oneFeature攻击时
+* 先进行deepfoolattack线性攻击（没用）
+* 模拟退火oneFeature攻击
+
+### tutorial_oneFeature_k.py
+* 进行oneFeature测试 测试一个恶意软件生成一个对抗样本
+* 返回扰动特征数量
+* 得到对抗样本
+### attackall.py
+* 进行oneFeature测试 测试整个测试集的恶意软件去生成对抗样本
+* 返回平均扰动数量=扰动总数/恶意软件数量
+* 针对某一架构DNN的对抗样本存到onefeature_xxx_xxx.csv中
+
+
+
+功能
+（分别针对不同架构）
+* 计算平均扰动
+* 得到对抗样本
+* 不同攻击fit值变化
+
+1 对于一个攻击
+* 计算平均扰动
+* 得到对抗样本
+* 不同攻击fit值变化（画图）
+  * 画两个图  
+  * 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）******遇到问题 量级相差特别大
+  * bestvalue的曲线（每次修改特征的bestvalue）(可能要多种攻击进行比较)
+
+
+2 实现其他攻击的集成，deepfool攻击，fgsm攻击，jsmf攻击,
+3 开发一个deepfool+fgsm 集成
+4 不同架构DNN
+5 开发第二种攻击模式
+6  文字部分
