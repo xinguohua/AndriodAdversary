@@ -37,6 +37,7 @@ from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
 from keras.preprocessing.image import img_to_array,array_to_img
 from keras.applications.resnet50 import decode_predictions
+from oneFeature.sa import utilities as ut
 import tensorflow as tf
 
 import keras
@@ -76,7 +77,7 @@ def main():
         featurefqueezing_bit_depth=1)
 
     attack = DeepFoolAttack(m)
-    attack_config = {"iterations": 200, "overshoot": 0}
+    attack_config = {"iterations": 200, "overshoot": 10}
     tlabel = 0
 
     #读入所有样本数据
@@ -89,8 +90,13 @@ def main():
     allchangefeaturenumber=0
     #存放所有对抗样本的list
     advmalware=[]
-    # for i in range(len(val_data)):
-    for i in range(4):
+
+    # 画图
+    allX, allY = [], []  # [[样本1迭代次数.....][样本2迭代次数....]....] [[bestvalues...][bestvalues...]]
+
+    for i in range(len(val_data)):
+    # 测试
+    # for i in range(5):
         if val_labels[i] == 1:
             malwarenumber=malwarenumber+1
             data = val_data[i:i + 1]
@@ -102,9 +108,18 @@ def main():
 
             adversary.set_target(is_targeted_attack=True, target_label=tlabel)
 
+
             # deepfool targeted attack
-            adversary,featurenumber = attack(adversary, **attack_config)
+            #对抗样本，改变特征的数量，迭代次数横坐标，bestvalues纵坐标
+            adversary,featurenumber,x,y = attack(adversary, **attack_config)
             allchangefeaturenumber=allchangefeaturenumber+featurenumber
+
+            # 增加特征x[....]==返回修改特征的迭代次数横坐标
+            allX.append(x)
+            # 增加特征x的[bestvalus...]bestvalues变化的纵坐标
+            y = ut.normalization(y)
+            # 进行归一化 因为量级不一样
+            allY.append(y)
 
             if adversary.is_successful():
                 advmalware.append(adversary.adversarial_example[0])
@@ -114,17 +129,27 @@ def main():
             del adversary
             print("deepfool target attack done==========+"+str(i)+"个样本完成")
 
+
     #打印所有扰动的数量
-    print(allchangefeaturenumber)
+    print("所有扰动的数量"+str(allchangefeaturenumber))
     #打印恶意软件的数量
-    print(malwarenumber)
+    print("恶意软件的数量"+str(malwarenumber))
     #求平均扰动
     avechangefeaturenumber=allchangefeaturenumber/malwarenumber
-    print(avechangefeaturenumber)
+    print("平均扰动"+str(avechangefeaturenumber))
 
     #针对某一架构DNN的对抗样本存到csv文件中
     advmalware=np.mat(advmalware)
     np.savetxt('..//..//data//onefeature_200_200.csv', advmalware, delimiter = ',')
+
+    # 画图
+    # 单个样本 过程
+    # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
+    save_name =  "AllMalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
+    # 迭代次数和fitness图
+    ut.plotgraph(allX[0:30], allY[0:30],
+                     "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
+                    save_name)
 
 
 
