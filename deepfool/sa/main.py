@@ -1,7 +1,7 @@
-from oneFeature.sa import utilities as ut
-from oneFeature.sa  import KnapSack as KS
+from deepfool.sa import utilities as ut
+from deepfool.sa  import KnapSack as KS
 import numpy as np
-from oneFeature.sa import Algorithms
+from deepfool.sa import Algorithms
 import os
 #origin
 class Main(object):
@@ -10,6 +10,31 @@ class Main(object):
                 SA_iterations=200,MaxTemp=200,TempChange=0.5):
         #加上模型
         self.model=model
+
+        #改变的索引
+        # self.doindex = np.where(dataset != origin)
+        #失败
+        # print(dataset)
+        # print(origin)
+        if np.array_equal(dataset,origin):
+            #失败则是所有索引
+            self.doindex=(np.array(range(0,25000)),'failed')
+        else:
+            # 改变的索引
+            # self.doindex = np.where(dataset != origin)
+            #差值索引
+            # self.doindex = np.where(dataset - origin>0.5)
+            #与线性解差值绝对值
+            chazhi=np.abs(dataset-origin)
+            #差值从大到小排序后输出索引
+            listindex=sorted(range(len(chazhi)), key=lambda k: chazhi[k],reverse=True)
+            #取前两百个索引差值做大的索引
+            listindex=listindex[1:10000]
+            listindex=np.array(listindex)
+            self.doindex = (listindex, 'success')
+        #打印索引形状
+        print(self.doindex[0].shape)
+
 
         #线性解ndarray
         self.dataset = dataset
@@ -49,23 +74,23 @@ class Main(object):
         # 模拟退火算法
         #初始算法 模拟退火参数（内层迭代次数 最大温度 温度变化） 背包问题
         self.algorithm = Algorithms.SimulatedAnnealing(max_iterations=self.SA_iterations, temp_max=self.MaxTemp,
-                                                           temp_change=self.TempChange, KnapsackObj=self.myKnapSack)
+                                                           temp_change=self.TempChange, KnapsackObj=self.myKnapSack,doindex=self.doindex)
 
 
     def Run(self,templist,iteration):
-        allX,allY = [],[] #iterations,fitness[外层模拟退火[内层模拟退火]     ]
+        allX,allY = [],[] #iterations,fitness
         v= []
         o = []
         t = []
         solutions = []
-        for i in range(self.num_iterations): #模拟退火外层
+        for i in range(self.num_iterations):
             best,x,y,operations,runt = self.algorithm.run(templist)
             allX.append(x)
             allY.append(y)
             o.append(operations)
             t.append(runt)
-            solutions.append(best) #每次模拟退火外部迭代得出的方案
-            v.append(self.myKnapSack.fitness(best)) #每次模拟退火外部迭代对应的值
+            solutions.append(best)
+            v.append(self.myKnapSack.fitness(best))
 
 
             # print("x"+str(x))
@@ -74,10 +99,13 @@ class Main(object):
             # print("allY"+str(allY))
             # print("v" + str(v))
 
-        #Plot 画图----画每次修改特征 模拟退火的图 每条代表一次模拟退火外部迭代
+
+
+
+        #Plot
         #save_name = self.algorithm.getName()+"_"+str(self.num_iterations)+"_sa_x_fitnees_pic"+str(iteration)
 
-        #迭代次数和fitness图 每次修改特征的模拟退火图
+        #迭代次数和fitness图
         #ut.plotgraph(allX,allY,self.algorithm.getName()+": Fitness over "+str(self.num_iterations)+" iteration(s)",save_name)
 
 
@@ -85,7 +113,6 @@ class Main(object):
         data = list()
         best_index = np.argmin(v)
         print("最好方案"+str(v[best_index]))
-        #相当于每次修改特征模拟退火算法的最优解都要存到csv里
         data.append(['Algorithm','Iteration','Best Value','Operations','Time (Milli)'])
         data.append([self.algorithm.getName(),self.num_iterations,v[best_index],o[best_index],t[best_index]])
         ut.write_file(data,"./"+self.algorithm.getName()+"_Results.csv")

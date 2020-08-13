@@ -2,9 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f3c1829-745c-41d4-bf7d-c9129f36d44d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oneFeature/advbox/defences/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oneFeature/advbox/defences/feature_squeezing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/deepfool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/deepfoolattack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/synset_words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/test_deepfool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/test_im1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deepfool/test_im2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/malwareclassification/train_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/malwareclassification/train_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/OptimalSolution/f1_l-d_kp_10_269" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_5featuresbestSA__sa_x_fitnees_pic.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_5featuresbestvalues__sa_x_fitnees_pic.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_Simulated Annealing_10_sa_x_fitnees_pic0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_Simulated Annealing_10_sa_x_fitnees_pic1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_Simulated Annealing_10_sa_x_fitnees_pic2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_Simulated Annealing_10_sa_x_fitnees_pic3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/Plots/FitnessVIterations_Simulated Annealing_10_sa_x_fitnees_pic4.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/sa/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/sa/utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/tutorials/attackall.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/tutorials/oneFeatureattackall.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +38,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AndriodAdversary$train_models.coverage" NAME="train_models Coverage Results" MODIFIED="1597106891000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$models_grid_search.coverage" NAME="models_grid_search Coverage Results" MODIFIED="1597042020036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$nn_grid_search.coverage" NAME="nn_grid_search Coverage Results" MODIFIED="1597041165058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$attackall.coverage" NAME="attackall Coverage Results" MODIFIED="1597217227612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/tutorials" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_oneFeature_k.coverage" NAME="tutorial_oneFeature_k Coverage Results" MODIFIED="1597240825879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/tutorials" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$deepfool.coverage" NAME="deepfool Coverage Results" MODIFIED="1597238609139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/advbox/attacks" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$evaluate_models.coverage" NAME="evaluate_models Coverage Results" MODIFIED="1597106273144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_fgsm_k.coverage" NAME="tutorial_fgsm_k Coverage Results" MODIFIED="1597316991770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fgsm/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$test.coverage" NAME="test Coverage Results" MODIFIED="1597285624378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_oneFeature_k.coverage" NAME="tutorial_oneFeature_k Coverage Results" MODIFIED="1597308702252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$deepfool.coverage" NAME="deepfool Coverage Results" MODIFIED="1597283215874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/advbox/attacks" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$deepfoolattackall.coverage" NAME="deepfoolattackall Coverage Results" MODIFIED="1597307463155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deepfool/tutorials" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$CalculateFeature.coverage" NAME="CalculateFeature Coverage Results" MODIFIED="1597021622908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analyze" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$imagenet_tutorial_deepfool_k.coverage" NAME="imagenet_tutorial_deepfool_k Coverage Results" MODIFIED="1597209387822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$fgsm.coverage" NAME="fgsm Coverage Results" MODIFIED="1597316807511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fgsm1/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$fgsm__1_.coverage" NAME="fgsm (1) Coverage Results" MODIFIED="1597317219274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$train_models.coverage" NAME="train_models Coverage Results" MODIFIED="1597322690952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$nn_grid_search.coverage" NAME="nn_grid_search Coverage Results" MODIFIED="1597041165058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$fgsmattackall.coverage" NAME="fgsmattackall Coverage Results" MODIFIED="1597327262176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$attackall.coverage" NAME="attackall Coverage Results" MODIFIED="1597295952654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_deepfool_k.coverage" NAME="tutorial_deepfool_k Coverage Results" MODIFIED="1597306043934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deepfool/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$evaluate_models.coverage" NAME="evaluate_models Coverage Results" MODIFIED="1597106273144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_fgsm_k__2_.coverage" NAME="tutorial_fgsm_k (2) Coverage Results" MODIFIED="1597325886291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$attackall__1_.coverage" NAME="attackall (1) Coverage Results" MODIFIED="1597302357009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/deepfool/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_fgsm_k__1_.coverage" NAME="tutorial_fgsm_k (1) Coverage Results" MODIFIED="1597316831847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fgsm1/tutorials" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$imagenet_tutorial_deepfool_k.coverage" NAME="imagenet_tutorial_deepfool_k Coverage Results" MODIFIED="1597319015015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient/tutorials" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -40,40 +75,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py">
+        <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/oneFeatureattackall.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="98" column="47" lean-forward="true" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+            <state relative-caret-position="317">
+              <caret line="145" column="19" lean-forward="true" selection-start-line="145" selection-start-column="19" selection-end-line="145" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradient/tutorials/tutorial_fgsm_k.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="55" column="4" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="56" selection-end-column="24" />
+              <folding>
+                <element signature="e#713#750#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py">
+        <entry file="file://$PROJECT_DIR$/gradient/tutorials/fgsmattackall.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="185" column="52" selection-start-line="185" selection-start-column="52" selection-end-line="185" selection-end-column="52" />
+            <state relative-caret-position="224">
+              <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
               <folding>
-                <element signature="e#710#741#0" expanded="true" />
+                <element signature="e#713#750#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/sa/utilities.py">
+        <entry file="file://$PROJECT_DIR$/gradient/advbox/attacks/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="117">
+              <caret line="72" selection-start-line="72" selection-end-line="72" />
               <folding>
                 <element signature="e#618#645#0" expanded="true" />
               </folding>
@@ -82,49 +120,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/attackall.py">
+        <entry file="file://$PROJECT_DIR$/gradient/advbox/attacks/deepfool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="124" column="27" selection-start-line="124" selection-start-column="27" selection-end-line="124" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/sa/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-927">
-              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/sa/Algorithms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-205">
-              <caret line="67" column="43" lean-forward="true" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+            <state relative-caret-position="668">
+              <caret line="238" column="32" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="32" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#710#741#0" expanded="true" />
+                <element signature="e#4123#5884#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/sa/AnnealingFunctions.py">
+        <entry file="file://$PROJECT_DIR$/gradient/sa/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+            <state relative-caret-position="96">
+              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/oneFeature/sa/KnapSack.py">
+        <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="51" />
+            <state>
+              <folding>
+                <element signature="e#710#741#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,7 +181,11 @@
       <find>solutions</find>
       <find>fitness</find>
       <find>v</find>
+      <find>max</find>
       <find>best</find>
+      <find>model</find>
+      <find>overs</find>
+      <find>allchangefeaturenumber</find>
     </findStrings>
     <dirStrings>
       <dir>D:\安全课程\android detection\finally\AndriodAdversary\oneFeature\advbox\defences</dir>
@@ -171,24 +201,56 @@
         <option value="$PROJECT_DIR$/malwareclassification/models_grid_search.py" />
         <option value="$PROJECT_DIR$/malwareclassification/neural_network.py" />
         <option value="$PROJECT_DIR$/malwareclassification/evaluate_models.py" />
-        <option value="$PROJECT_DIR$/malwareclassification/train_models.py" />
         <option value="$PROJECT_DIR$/oneFeature/tutorials/imagenet_tutorial_deepfool_k.py" />
         <option value="$PROJECT_DIR$/oneFeature/advbox/models/keras.py" />
-        <option value="$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py" />
-        <option value="$PROJECT_DIR$/oneFeature/tutorials/attackall.py" />
         <option value="$PROJECT_DIR$/oneFeature/sa/Algorithms.py" />
-        <option value="$PROJECT_DIR$/oneFeature/sa/main.py" />
         <option value="$PROJECT_DIR$/oneFeature/sa/KnapSack.py" />
+        <option value="$PROJECT_DIR$/oneFeature/test.py" />
         <option value="$PROJECT_DIR$/oneFeature/sa/utilities.py" />
         <option value="$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py" />
+        <option value="$PROJECT_DIR$/oneFeature/tutorials/attackall.py" />
+        <option value="$PROJECT_DIR$/deepfool/tutorials/11.py" />
+        <option value="$PROJECT_DIR$/deepfool/tutorials/imagenet_tutorial_deepfool_k.py" />
+        <option value="$PROJECT_DIR$/deepfool/sa/Algorithms.py" />
+        <option value="$PROJECT_DIR$/deepfool/sa/SimulatedAnnealing.py" />
+        <option value="$PROJECT_DIR$/deepfool/advbox/models/keras.py" />
+        <option value="$PROJECT_DIR$/deepfool/tutorials/attackall.py" />
+        <option value="$PROJECT_DIR$/oneFeature/sa/main.py" />
+        <option value="$PROJECT_DIR$/deepfool/sa/main.py" />
+        <option value="$PROJECT_DIR$/deepfool/tutorials/tutorial_deepfool_k.py" />
+        <option value="$PROJECT_DIR$/deepfool/sa/utilities.py" />
+        <option value="$PROJECT_DIR$/deepfool/advbox/attacks/deepfool.py" />
+        <option value="$PROJECT_DIR$/deepfool/tutorials/deepfoolattackall.py" />
+        <option value="$PROJECT_DIR$/fgsm/advbox/attacks/deepfool.py" />
+        <option value="$PROJECT_DIR$/fgsm/advbox/models/keras.py" />
+        <option value="$PROJECT_DIR$/fgsm/sa/Algorithms.py" />
+        <option value="$PROJECT_DIR$/fgsm/sa/main.py" />
+        <option value="$PROJECT_DIR$/fgsm/sa/SimulatedAnnealing.py" />
+        <option value="$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py" />
+        <option value="$PROJECT_DIR$/fgsm/tutorials/attackall.py" />
+        <option value="$PROJECT_DIR$/fgsm1/advbox/attacks/deepfool.py" />
+        <option value="$PROJECT_DIR$/fgsm1/tutorials/tutorial_fgsm_k.py" />
+        <option value="$PROJECT_DIR$/fgsm/tutorials/tutorial_fgsm_k.py" />
+        <option value="$PROJECT_DIR$/gradient/tutorials/imagenet_tutorial_deepfool_k.py" />
+        <option value="$PROJECT_DIR$/gradient/advbox/models/keras.py" />
+        <option value="$PROJECT_DIR$/gradient/sa/Algorithms.py" />
+        <option value="$PROJECT_DIR$/gradient/sa/SimulatedAnnealing.py" />
+        <option value="$PROJECT_DIR$/gradient/tutorials/attackall.py" />
+        <option value="$PROJECT_DIR$/gradient/sa/utilities.py" />
+        <option value="$PROJECT_DIR$/malwareclassification/train_models.py" />
+        <option value="$PROJECT_DIR$/gradient/tutorials/tutorial_fgsm_k.py" />
+        <option value="$PROJECT_DIR$/gradient/advbox/attacks/deepfool.py" />
+        <option value="$PROJECT_DIR$/oneFeature/tutorials/oneFeatureattackall.py" />
+        <option value="$PROJECT_DIR$/gradient/sa/main.py" />
+        <option value="$PROJECT_DIR$/gradient/tutorials/fgsmattackall.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="90" />
-    <option name="y" value="5" />
-    <option name="width" value="1755" />
-    <option name="height" value="1020" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="15" />
+    <option name="y" value="1" />
+    <option name="width" value="1255" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -211,20 +273,61 @@
             <path>
               <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
               <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="gradient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="gradient" type="462c0819:PsiDirectoryNode" />
+              <item name="advbox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="gradient" type="462c0819:PsiDirectoryNode" />
+              <item name="advbox" type="462c0819:PsiDirectoryNode" />
+              <item name="attacks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="gradient" type="462c0819:PsiDirectoryNode" />
+              <item name="sa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="gradient" type="462c0819:PsiDirectoryNode" />
+              <item name="tutorials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="malwareclassification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
               <item name="oneFeature" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
               <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
               <item name="oneFeature" type="462c0819:PsiDirectoryNode" />
-              <item name="sa" type="462c0819:PsiDirectoryNode" />
+              <item name="advbox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="oneFeature" type="462c0819:PsiDirectoryNode" />
+              <item name="advbox" type="462c0819:PsiDirectoryNode" />
+              <item name="attacks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
               <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
               <item name="oneFeature" type="462c0819:PsiDirectoryNode" />
               <item name="sa" type="462c0819:PsiDirectoryNode" />
-              <item name="Plots" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
@@ -240,10 +343,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../zhenghe/AdvBox-master-改造 - tryFGSMagain" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\gradient" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\fgsm1" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\fgsm\advbox" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\fgsm" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\deepfool" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -257,8 +369,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tutorial_oneFeature_k">
-    <configuration name="attackall" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.fgsmattackall">
+    <configuration name="fgsm (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndriodAdversary" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -266,12 +378,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/oneFeature/tutorials" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gradient/tutorials" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oneFeature/tutorials/attackall.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gradient/tutorials/fgsm.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,7 +392,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="deepfool" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="fgsmattackall" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndriodAdversary" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -288,12 +400,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/oneFeature/advbox/attacks" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gradient/tutorials" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gradient/tutorials/fgsmattackall.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -310,12 +422,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/oneFeature/tutorials" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gradient/tutorials" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\安全课程\android detection\finally\AndriodAdversary\oneFeature\tutorials\tutorial_oneFeature_k.py" />
+      <option name="SCRIPT_NAME" value="D:\安全课程\android detection\finally\AndriodAdversary\gradient\tutorials\tutorial_fgsm_k.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -346,7 +458,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tutorial_oneFeature_k" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tutorial_fgsm_k (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndriodAdversary" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -354,12 +466,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/oneFeature/tutorials" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gradient/tutorials" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gradient/tutorials/tutorial_fgsm_k.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -370,11 +482,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tutorial_oneFeature_k" />
-        <item itemvalue="Python.deepfool" />
-        <item itemvalue="Python.attackall" />
-        <item itemvalue="Python.imagenet_tutorial_deepfool_k" />
+        <item itemvalue="Python.fgsmattackall" />
+        <item itemvalue="Python.tutorial_fgsm_k (2)" />
         <item itemvalue="Python.train_models" />
+        <item itemvalue="Python.imagenet_tutorial_deepfool_k" />
+        <item itemvalue="Python.fgsm (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -391,23 +503,23 @@
       <workItem from="1597021585729" duration="35374000" />
       <workItem from="1597105589722" duration="3132000" />
       <workItem from="1597202131448" duration="1246000" />
-      <workItem from="1597204543926" duration="26624000" />
+      <workItem from="1597204543926" duration="66033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66376000" />
+    <option name="totallyTimeSpent" value="105785000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15348525" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27882037" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.388102" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42776203" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -424,6 +536,29 @@
       <window_info anchor="right" id="SciView" order="3" weight="0.3297587" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297587" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28157502" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4032258" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286119" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.3297587" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297587" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -433,17 +568,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py</url>
-          <line>116</line>
+          <line>113</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py</url>
-          <line>93</line>
+          <line>90</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py</url>
-          <line>142</line>
+          <line>147</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -460,319 +595,428 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deepfool/deepfoolattack.py">
+    <entry file="file://$PROJECT_DIR$/fgsm/advbox/models/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="307" column="8" selection-start-line="307" selection-start-column="8" selection-end-line="307" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analyze/CalculateFeature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="82" />
+        <state relative-caret-position="-698">
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#618#649#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/incremental_learning.py" />
-    <entry file="file://C:/ProgramData/Anaconda3/envs/tensorflow2/Lib/site-packages/keras/layers/core.py">
+    <entry file="file://$PROJECT_DIR$/fgsm/advbox/models/keras.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="834" column="39" lean-forward="true" selection-start-line="834" selection-start-column="39" selection-end-line="834" selection-end-column="39" />
+        <state relative-caret-position="58">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/nn_grid_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="50" column="148" selection-start-line="50" selection-start-column="148" selection-end-line="50" selection-end-column="148" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/train_random_subsampling.py" />
-    <entry file="file://$PROJECT_DIR$/malwareclassification/neural_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2608">
-          <caret line="97" column="84" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-            <element signature="e#6968#7272#0" />
-            <element signature="e#7335#8472#0" />
-            <element signature="e#8514#8807#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/set_onehot_encoding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3271">
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/models_grid_search.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/README.md" />
-    <entry file="file://$PROJECT_DIR$/malwareclassification/train_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="95" column="54" lean-forward="true" selection-start-line="95" selection-start-column="54" selection-end-line="95" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="547" column="8" selection-start-line="547" selection-start-column="8" selection-end-line="547" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/evaluate_models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="84" column="4" lean-forward="true" selection-start-line="84" selection-start-column="4" selection-end-line="85" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/fgsm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#177#1412#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/malwareclassification/jsma.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#589#907#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/defences/feature_squeezing.py">
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/defences/gaussian_augmentation.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/defences/label_smoothing.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/defences/spatial_smoothing.py">
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/Algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-348" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/defences/thermometer_encoding.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/cw2_pytorch.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/gradient_method.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/VERSION">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/ebook_imagenet_jsma_tf.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/cw.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-521">
-          <folding>
-            <element signature="e#667#698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/tf/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="29">
-            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/models/graphpipeBlackBox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-689">
-          <folding>
-            <element signature="e#628#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/models/keras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-84">
-          <folding>
-            <element signature="e#69#97#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-783">
-          <folding>
-            <element signature="e#16#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1653">
-          <folding>
-            <element signature="e#597#628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/adversary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="158" selection-start-line="158" selection-end-line="158" />
-          <folding>
-            <element signature="e#695#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/Simulated Annealing_Results.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="174">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/sa/KnapSack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/sa/AnnealingFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#618#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/attackall.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="124" column="27" selection-start-line="124" selection-start-column="27" selection-end-line="124" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/sa/Algorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-205">
-          <caret line="67" column="43" lean-forward="true" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oneFeature/sa/main.py">
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/AnnealingFunctions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-927">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/KnapSack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/SimulatedAnnealing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/sa/utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <folding>
+            <element signature="e#28#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/tutorials/fgsm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/tutorials/fgsmtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/tutorials/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-349">
+          <folding>
+            <element signature="e#597#628#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/advbox/adversary.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/tutorials/attackall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="104" column="23" selection-start-line="104" selection-start-column="23" selection-end-line="104" selection-end-column="23" />
+          <folding>
+            <element signature="e#713#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm1/advbox/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-259">
+          <folding>
+            <element signature="e#618#649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm1/advbox/attacks/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm1/advbox/attacks/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <folding>
+            <element signature="e#618#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm1/advbox/attacks/deepfool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm1/tutorials/fgsm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm1/tutorials/tutorial_fgsm_k.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="e#713#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/tutorials/tutorial_fgsm_k.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding>
+            <element signature="e#713#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fgsm/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/advbox/defences/feature_squeezing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1392">
+          <folding>
+            <element signature="e#761#792#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/advbox/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-605">
+          <folding>
+            <element signature="e#618#649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/advbox/adversary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-696">
+          <folding>
+            <element signature="e#695#722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/sa/KnapSack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-965">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/sa/SimulatedAnnealing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/tutorials/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/tutorials/fgsmtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1914">
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oneFeature/sa/utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        <state relative-caret-position="232">
+          <caret line="13" column="32" selection-end-line="75" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/sa/utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/tensorflow2/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/onerow.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oneFeature/sa/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/sa/AnnealingFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/sa/Algorithms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/x_test01.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="116">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/deepfool_200_200.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/malwareclassification/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2436">
+          <folding>
+            <element signature="e#0#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/malwareclassification/train_models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1262">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/tutorial_oneFeature_k.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="98" column="47" lean-forward="true" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="47" />
+        <state relative-caret-position="290">
+          <caret line="94" column="8" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="47" />
+          <folding>
+            <element signature="e#713#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/tutorials/fgsm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1972">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/tutorials/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1131">
+          <folding>
+            <element signature="e#597#628#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oneFeature/tutorials/oneFeatureattackall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="145" column="19" lean-forward="true" selection-start-line="145" selection-start-column="19" selection-end-line="145" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/sa/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oneFeature/advbox/attacks/deepfool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="185" column="52" selection-start-line="185" selection-start-column="52" selection-end-line="185" selection-end-column="52" />
+        <state>
           <folding>
             <element signature="e#710#741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/advbox/attacks/deepfool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="238" column="32" selection-start-line="238" selection-start-column="23" selection-end-line="238" selection-end-column="32" />
+          <folding>
+            <element signature="e#710#741#0" expanded="true" />
+            <element signature="e#4123#5884#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/tutorials/tutorial_fgsm_k.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="55" column="4" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="56" selection-end-column="24" />
+          <folding>
+            <element signature="e#713#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/advbox/models/keras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2387">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#615#653#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/advbox/attacks/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+          <folding>
+            <element signature="e#618#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient/tutorials/fgsmattackall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="e#713#750#0" expanded="true" />
           </folding>
         </state>
       </provider>

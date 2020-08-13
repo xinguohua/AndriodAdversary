@@ -29,9 +29,9 @@ import numpy as np
 from PIL import Image
 #pip install Pillow
 
-from oneFeature.advbox.adversary import Adversary
-from oneFeature.advbox.attacks.deepfool import DeepFoolAttack
-from oneFeature.advbox.models.keras import KerasModel
+from deepfool.advbox.adversary import Adversary
+from deepfool.advbox.attacks.deepfool import DeepFoolAttack
+from deepfool.advbox.models.keras import KerasModel
 
 
 import tensorflow as tf
@@ -51,6 +51,7 @@ def main():
 
     #打印模型信息
     logging.info(model.summary())
+
 
     #读入一个样本数据
     data = np.loadtxt(open("..//..//data//onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
@@ -80,7 +81,7 @@ def main():
         featurefqueezing_bit_depth=1)
 
     attack = DeepFoolAttack(m)
-    attack_config = {"iterations": 200, "overshoot": 10}
+    attack_config = {"iterations": 200, "overshoot": 5}
 
     adversary = Adversary(data,None)
 
@@ -89,10 +90,11 @@ def main():
 
     # deepfool targeted attack
     adversary,featurenumber,m,n = attack(adversary, **attack_config)
-    #featurenumber为扰动个数
+    # featurenumber为扰动个数
     print(featurenumber)
+
     if adversary.is_successful():
-        #得到对抗样本<class 'numpy.ndarray'>
+        # 得到对抗样本<class 'numpy.ndarray'>
         print(adversary.adversarial_example[0])
         print(
             'nonlinear attack success, adversarial_label=%d'
@@ -102,13 +104,10 @@ def main():
 
 
 
-    print("one feature target attack done")
+    print("deepfool target attack done")
 
 
 
 if __name__ == '__main__':
-    #进行oneFeature测试 测试一个恶意软件生成一个对抗样本
-    #在oneFeature攻击时
-    #先进行deepfoolattack攻击（没用）
-    #模拟退火oneFeature攻击
+
     main()

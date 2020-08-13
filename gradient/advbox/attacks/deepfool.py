@@ -22,18 +22,44 @@ from __future__ import division
 from builtins import str
 from builtins import range
 import logging
-
-import numpy as np
-from oneFeature.sa import utilities as ut
-from .base import Attack
-from oneFeature.sa.main import Main
 import time
-
+import numpy as np
+from gradient.sa import utilities as ut
+from .base import Attack
+from gradient.sa.main import Main
+import tensorflow as tf
 __all__ = ['DeepFoolAttack']
 
-def normalization(data):
-    _range = np.max(data) - np.min(data)
-    return (data - np.min(data)) / _range
+def create_adversarial_pattern(input_x, input_y):
+    """
+    FGSM attack as described in https://arxiv.org/pdf/1412.6572.pdf
+    The goal of FGSM is to cause the loss function to increase for specific inputs.
+    It operates by perturbating each feature of an input x by a small value to maximize the loss.
+    Steps:
+    1)Compute the gradient of the loss with respect to the input
+                            ∇_x J(θ,x,y)
+      where x is the model's input, y the target class, θ the model's parameters, ∇_x the gradient and J(θ,x,y) the loss
+    2)Take the sign of the gradient (calculated in 1), multiply it by a threshold ε and add it to the
+       original input x.
+                            x_adv=x+e*sign(∇_x J(θ,x,y))
+
+    :param input_x: the original input data
+    :param input_y: the original input label
+    :return: the sign of the gradient
+    """
+    trained_model = tf.keras.models.load_model(
+        '..//..//malwareclassification//models//best_model_200_200.h5')
+    loss_object = tf.keras.losses.SparseCategoricalCrossentropy()
+    with tf.GradientTape() as tape:
+        tape.watch(input_x)
+        prediction = trained_model(input_x)  # predict original input
+        loss = loss_object(input_y, prediction)  # get the loss
+    # get the gradients of the loss with respect to the inputs
+    gradient = tape.gradient(loss, input_x)
+    # get the sign of the gradients to create perturbations
+    signed_grad = tf.sign(gradient)
+    return signed_grad
+
 
 class DeepFoolAttack(Attack):
     """
@@ -149,22 +175,36 @@ class DeepFoolAttack(Attack):
         #第一次迭代原始样本
         y=adversary.original[0].tolist()
 
-        allX, allY = [], [] #[[特征1.....][特征2....]....] [[fitness...][fitness...]]
-        valuesx,valuesy=[],[]
-        for iteration in range(iterations): #每次迭代相当于修改一个特征
-            # 返回离散解至线性解的距离 离散解
-            v, solutions,x,y = m.Run(y,iteration) #修改iteration特征，特征内进行模拟退火
+        allX, allY = [], []  # [[特征1.....][特征2....]....] [[fitness...][fitness...]]
+        valuesx, valuesy = [], []
+        for iteration in range(iterations):
 
-            #增加特征x[....]==返回best对应的那条曲线的横坐标
+            fgsm_x = np.mat(y)
+            fgsm_y = np.mat(pre_label)
+            fgsm_x = tf.convert_to_tensor(fgsm_x, dtype=np.float32)
+            fgsm_y = tf.convert_to_tensor(fgsm_y, dtype=np.int32)
+            #扰动方向 有+1，有-1
+            perturbations = create_adversarial_pattern(fgsm_x, fgsm_y)  # get the sign of gradient wrt the input
+            print(perturbations)
+            # 选出所有为1的索引,也就是扰动正方向的索引
+            perturbationsindex = np.where(perturbations[0] == 1)[0]
+            print(type(perturbationsindex))
+            print(perturbationsindex)
+
+            # 返回离散解至线性解的距离 离散解
+            v, solutions,x,y  = m.Run(y,iteration,perturbationsindex)
+
+            # 增加特征x[....]==返回best对应的那条曲线的横坐标
             allX.append(x)
-            #增加特征x的[fitness...]==返回best对应的那条曲线的纵坐标
-            y=ut.normalization(y)
-            #进行归一化 因为量级不一样
+            # 增加特征x的[fitness...]==返回best对应的那条曲线的纵坐标
+            y = ut.normalization(y)
+            # 进行归一化 因为量级不一样
             allY.append(y)
-            #特征坐标
+            # 特征坐标
             valuesx.append(iteration)
-            #特征对应的bestvalue
+            # 特征对应的bestvalue
             valuesy.append(v)
+
 
             # 得到此增加一个特征下的离散解
             y=solutions.copy()
@@ -181,23 +221,21 @@ class DeepFoolAttack(Attack):
                                        adv_label], pre_label, adv_label))
             if adversary.try_accept_the_example(maty, adv_label):
                 # 画图
-                #单个样本 过程
+                # 单个样本 过程
                 # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
-                save_name = str(iteration+1)+"featuresbestSA" + "_" + "process"+str(int(time.time()))
+                save_name = str(iteration + 1) + "featuresbestSA" + "_" + "process" + str(int(time.time()))
                 # 迭代次数和fitness图
                 ut.plotavegraph(allX, allY,
-                             str(iteration+1)+"featuresbestSA" + "_" + "process",
-                             save_name)
+                                str(iteration + 1) + "featuresbestSA" + "_" + "process",
+                                save_name)
 
                 # 画图
-                #单个样本 结果
+                # 单个样本 结果
                 # bestvalue的曲线（每次修改特征的bestvalue）
-                save_name1 = str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic"+str(int(time.time()))
+                save_name1 = str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic" + str(int(time.time()))
                 ut.plotsinglegraph(valuesx, valuesy,
-                             str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic",
-                             save_name1)
-
-
+                                   str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic",
+                                   save_name1)
                 return adversary,iteration+1,valuesx,valuesy
 
 

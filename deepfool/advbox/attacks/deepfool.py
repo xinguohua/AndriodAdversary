@@ -24,16 +24,12 @@ from builtins import range
 import logging
 
 import numpy as np
-from oneFeature.sa import utilities as ut
+from deepfool.sa import utilities as ut
 from .base import Attack
-from oneFeature.sa.main import Main
+from deepfool.sa.main import Main
 import time
-
 __all__ = ['DeepFoolAttack']
 
-def normalization(data):
-    _range = np.max(data) - np.min(data)
-    return (data - np.min(data)) / _range
 
 class DeepFoolAttack(Attack):
     """
@@ -42,7 +38,7 @@ class DeepFoolAttack(Attack):
     https://arxiv.org/abs/1511.04599
     """
 
-    def _apply(self, adversary, iterations=100, overshoot=0.02):
+    def _apply(self, adversary, iterations=100, overshoot=0.2):
         """
           Apply the deep fool attack.
 
@@ -128,6 +124,7 @@ class DeepFoolAttack(Attack):
                                  adv_label], pre_label, adv_label))
 
 
+
             if adv_label==0:
                 print("linear attack success")
                 break
@@ -135,6 +132,8 @@ class DeepFoolAttack(Attack):
         #deepfool 没成功
         if adv_label == 1:
             print("linear attack failed")
+            #线性解为原始解
+            x=adversary.original
             #return adversary
 
 
@@ -146,25 +145,32 @@ class DeepFoolAttack(Attack):
         # 在求模拟退火时输入必须是array
         x = np.array(x)
         m = Main(dataset=x[0], origin=adversary.original[0],model=self.model)
+        # doindex=np.where(x[0]!=adversary.original[0])
+        # print(doindex)
+        # print(doindex[0].shape)
         #第一次迭代原始样本
         y=adversary.original[0].tolist()
 
-        allX, allY = [], [] #[[特征1.....][特征2....]....] [[fitness...][fitness...]]
-        valuesx,valuesy=[],[]
-        for iteration in range(iterations): #每次迭代相当于修改一个特征
+        allX, allY = [], []  # [[特征1.....][特征2....]....] [[fitness...][fitness...]]
+        valuesx, valuesy = [], []
+        for iteration in range(iterations):
             # 返回离散解至线性解的距离 离散解
-            v, solutions,x,y = m.Run(y,iteration) #修改iteration特征，特征内进行模拟退火
+            v, solutions,x,y = m.Run(y,iteration)
 
-            #增加特征x[....]==返回best对应的那条曲线的横坐标
+            # 增加特征x[....]==返回best对应的那条曲线的横坐标
             allX.append(x)
-            #增加特征x的[fitness...]==返回best对应的那条曲线的纵坐标
-            y=ut.normalization(y)
-            #进行归一化 因为量级不一样
+            # 增加特征x的[fitness...]==返回best对应的那条曲线的纵坐标
+            y = ut.normalization(y)
+            # 进行归一化 因为量级不一样
             allY.append(y)
-            #特征坐标
+            # 特征坐标
             valuesx.append(iteration)
-            #特征对应的bestvalue
+            # 特征对应的bestvalue
             valuesy.append(v)
+
+
+
+
 
             # 得到此增加一个特征下的离散解
             y=solutions.copy()
@@ -181,22 +187,21 @@ class DeepFoolAttack(Attack):
                                        adv_label], pre_label, adv_label))
             if adversary.try_accept_the_example(maty, adv_label):
                 # 画图
-                #单个样本 过程
+                # 单个样本 过程
                 # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
-                save_name = str(iteration+1)+"featuresbestSA" + "_" + "process"+str(int(time.time()))
+                save_name = str(iteration + 1) + "deepfoolfeaturesbestSA" + "_" + "process" + str(int(time.time()))
                 # 迭代次数和fitness图
                 ut.plotavegraph(allX, allY,
-                             str(iteration+1)+"featuresbestSA" + "_" + "process",
-                             save_name)
+                                str(iteration + 1) + "featuresbestSA" + "_" + "process",
+                                save_name)
 
                 # 画图
-                #单个样本 结果
+                # 单个样本 结果
                 # bestvalue的曲线（每次修改特征的bestvalue）
-                save_name1 = str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic"+str(int(time.time()))
+                save_name1 = str(iteration + 1) + "deepfoolfeaturesbestvalues" + "_" + "_results_pic" + str(int(time.time()))
                 ut.plotsinglegraph(valuesx, valuesy,
-                             str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic",
-                             save_name1)
-
+                                   str(iteration + 1) + "featuresbestvalues" + "_" + "_results_pic",
+                                   save_name1)
 
                 return adversary,iteration+1,valuesx,valuesy
 

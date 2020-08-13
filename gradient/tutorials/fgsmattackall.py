@@ -18,6 +18,7 @@ FGSM tutorial on mnist using advbox tool.
 FGSM method is non-targeted attack while FGSMT is targeted attack.
 """
 from __future__ import print_function
+from gradient.sa import utilities as ut
 import sys
 sys.path.append("..")
 import logging
@@ -29,12 +30,10 @@ import numpy as np
 from PIL import Image
 #pip install Pillow
 
-from oneFeature.advbox.adversary import Adversary
-from oneFeature.advbox.attacks.deepfool import DeepFoolAttack
-from oneFeature.advbox.models.keras import KerasModel
+from gradient.advbox.adversary import Adversary
+from gradient.advbox.attacks.deepfool import DeepFoolAttack
+from gradient.advbox.models.keras import KerasModel
 
-
-from oneFeature.sa import utilities as ut
 import tensorflow as tf
 
 import keras
@@ -80,22 +79,22 @@ def main():
     #读入所有样本数据
     val_data = np.loadtxt(open("..//..//data//x_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
     val_labels = np.loadtxt(open("..//..//data//y_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
-    #data = np.loadtxt(open("D:\\data\\onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
-    #测试集中恶意软件的数量
-    malwarenumber=0
-    #所有扰动的数量
-    allchangefeaturenumber=0
-    #存放所有对抗样本的list
-    advmalware=[]
+    #val_data = np.loadtxt(open("D:\\data\\onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
+    # 测试集中恶意软件的数量
+    malwarenumber = 0
+    # 所有扰动的数量
+    allchangefeaturenumber = 0
+    # 存放所有对抗样本的list
+    advmalware = []
 
     # 画图
     allX, allY = [], []  # [[样本1迭代次数.....][样本2迭代次数....]....] [[bestvalues...][bestvalues...]]
 
-    for i in range(len(val_data)):
+    # for i in range(len(val_data)):
     # 测试
-    # for i in range(5):
+    for i in range(5):
         if val_labels[i] == 1:
-            malwarenumber=malwarenumber+1
+            malwarenumber = malwarenumber + 1
             data = val_data[i:i + 1]
             data=np.matrix(data)
             print("=========================="+str(i))
@@ -105,11 +104,13 @@ def main():
 
             adversary.set_target(is_targeted_attack=True, target_label=tlabel)
 
+            # deepfool targeted attack
+            adversary = attack(adversary, **attack_config)
 
             # deepfool targeted attack
-            #对抗样本，改变特征的数量，迭代次数横坐标，bestvalues纵坐标
-            adversary,featurenumber,x,y = attack(adversary, **attack_config)
-            allchangefeaturenumber=allchangefeaturenumber+featurenumber
+            # 对抗样本，改变特征的数量，迭代次数横坐标，bestvalues纵坐标
+            adversary, featurenumber, x, y = attack(adversary, **attack_config)
+            allchangefeaturenumber = allchangefeaturenumber + featurenumber
 
             # 增加特征x[....]==返回修改特征的迭代次数横坐标
             allX.append(x)
@@ -124,33 +125,31 @@ def main():
                     'nonlinear attack success, adversarial_label=%d'
                     % (adversary.adversarial_label))
             del adversary
-            print("deepfool target attack done==========+"+str(i)+"个样本完成")
+            print("fgsm target attack done==========+"+str(i)+"个样本完成")
 
+    # 打印所有扰动的数量
+    print("所有扰动的数量" + str(allchangefeaturenumber))
+    # 打印恶意软件的数量
+    print("恶意软件的数量" + str(malwarenumber))
+    # 求平均扰动
+    avechangefeaturenumber = allchangefeaturenumber / malwarenumber
+    print("平均扰动" + str(avechangefeaturenumber))
 
-    #打印所有扰动的数量
-    print("所有扰动的数量"+str(allchangefeaturenumber))
-    #打印恶意软件的数量
-    print("恶意软件的数量"+str(malwarenumber))
-    #求平均扰动
-    avechangefeaturenumber=allchangefeaturenumber/malwarenumber
-    print("平均扰动"+str(avechangefeaturenumber))
-
-    #针对某一架构DNN的对抗样本存到csv文件中
-    advmalware=np.mat(advmalware)
-    np.savetxt('..//..//data//onefeature_200_200.csv', advmalware, delimiter = ',')
+    # 针对某一架构DNN的对抗样本存到csv文件中
+    advmalware = np.mat(advmalware)
+    np.savetxt('..//..//data//fgsm_200_200.csv', advmalware, delimiter=',')
 
     # 画图
     # 单个样本 过程
     # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
-    save_name =  "AllMalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
+    save_name = "AllMalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
     # 迭代次数和fitness图
-    ut.plotgraph(allX[0:30], allY[0:30],
-                     "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
-                    save_name)
-
-
-
-
+    # ut.plotgraph(allX[0:30], allY[0:30],
+    #              "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
+    #              save_name)
+    ut.plotgraph(allX, allY,
+                 "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
+                 save_name)
 
 
 if __name__ == '__main__':

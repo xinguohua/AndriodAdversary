@@ -1,7 +1,7 @@
-from oneFeature.sa import utilities as ut
-from oneFeature.sa  import KnapSack as KS
+from gradient.sa import utilities as ut
+from gradient.sa  import KnapSack as KS
 import numpy as np
-from oneFeature.sa import Algorithms
+from gradient.sa import Algorithms
 import os
 #origin
 class Main(object):
@@ -10,6 +10,8 @@ class Main(object):
                 SA_iterations=200,MaxTemp=200,TempChange=0.5):
         #加上模型
         self.model=model
+
+
 
         #线性解ndarray
         self.dataset = dataset
@@ -52,20 +54,20 @@ class Main(object):
                                                            temp_change=self.TempChange, KnapsackObj=self.myKnapSack)
 
 
-    def Run(self,templist,iteration):
-        allX,allY = [],[] #iterations,fitness[外层模拟退火[内层模拟退火]     ]
+    def Run(self,templist,iteration,perturbationsindex):
+        allX,allY = [],[] #iterations,fitness
         v= []
         o = []
         t = []
         solutions = []
-        for i in range(self.num_iterations): #模拟退火外层
-            best,x,y,operations,runt = self.algorithm.run(templist)
+        for i in range(self.num_iterations):
+            best,x,y,operations,runt = self.algorithm.run(templist,perturbationsindex)
             allX.append(x)
             allY.append(y)
             o.append(operations)
             t.append(runt)
-            solutions.append(best) #每次模拟退火外部迭代得出的方案
-            v.append(self.myKnapSack.fitness(best)) #每次模拟退火外部迭代对应的值
+            solutions.append(best)
+            v.append(self.myKnapSack.fitness(best))
 
 
             # print("x"+str(x))
@@ -74,18 +76,20 @@ class Main(object):
             # print("allY"+str(allY))
             # print("v" + str(v))
 
-        #Plot 画图----画每次修改特征 模拟退火的图 每条代表一次模拟退火外部迭代
-        #save_name = self.algorithm.getName()+"_"+str(self.num_iterations)+"_sa_x_fitnees_pic"+str(iteration)
 
-        #迭代次数和fitness图 每次修改特征的模拟退火图
-        #ut.plotgraph(allX,allY,self.algorithm.getName()+": Fitness over "+str(self.num_iterations)+" iteration(s)",save_name)
+
+
+        #Plot
+        # save_name = self.algorithm.getName()+"_"+str(self.num_iterations)+"_sa_x_fitnees_pic"+str(iteration)
+
+        #迭代次数和fitness图
+        # ut.plotgraph(allX,allY,self.algorithm.getName()+": Fitness over "+str(self.num_iterations)+" iteration(s)",save_name)
 
 
         '''saving results to csv'''
         data = list()
         best_index = np.argmin(v)
         print("最好方案"+str(v[best_index]))
-        #相当于每次修改特征模拟退火算法的最优解都要存到csv里
         data.append(['Algorithm','Iteration','Best Value','Operations','Time (Milli)'])
         data.append([self.algorithm.getName(),self.num_iterations,v[best_index],o[best_index],t[best_index]])
         ut.write_file(data,"./"+self.algorithm.getName()+"_Results.csv")
