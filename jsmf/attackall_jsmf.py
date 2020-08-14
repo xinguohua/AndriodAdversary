@@ -286,6 +286,9 @@ if __name__ == "__main__":
 
     X_train=[]
     Y_train=[]
+    # 良性
+    X_begin = []
+    Y_begin = []
     # # 恶意正常
     X_normal =[]
     Y_normal = []
@@ -332,6 +335,11 @@ if __name__ == "__main__":
             except ValueError:
                 print("22222222222222")
                 pass
+        else:
+            #添加良性软件
+            y = val_data[i:i + 1][0]
+            X_begin.append(y)
+            Y_begin.append(0)
 
 
     #print(val_data.shape)
@@ -374,6 +382,8 @@ if __name__ == "__main__":
     np.savetxt('..//data//jsmf//JSMF_200_200_Y_normal.csv', Y_normal, delimiter = ',')
     np.savetxt('..//data//jsmf//JSMF_200_200_X_adv.csv', X_adv, delimiter = ',')
     np.savetxt('..//data//jsmf//JSMF_200_200_Y_adv.csv', Y_adv, delimiter = ',')
+    np.savetxt('..//data//jsmf//JSMF_200_200__X_begin.csv', X_begin, delimiter=',')
+    np.savetxt('..//data//jsmf//JSMF_200_200__Y_begin.csv', Y_begin, delimiter=',')
     print("保存成功")
 
 

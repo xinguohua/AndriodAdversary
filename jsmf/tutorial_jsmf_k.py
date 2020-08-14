@@ -284,8 +284,12 @@ if __name__ == "__main__":
     average_changes = 0
     amount_malwares = 0
 
+    #测试训练集
     X_train=[]
     Y_train=[]
+    #良性
+    X_begin=[]
+    Y_begin=[]
     # # 恶意正常
     X_normal =[]
     Y_normal = []
@@ -332,6 +336,11 @@ if __name__ == "__main__":
             except ValueError:
                 print("22222222222222")
                 pass
+        else:
+            #添加良性软件
+            y = val_data[i:i + 1][0]
+            X_begin.append(y)
+            Y_begin.append(0)
 
     #算平均特征
     if amount_malwares > 0:
@@ -372,6 +381,9 @@ if __name__ == "__main__":
     #用来测试的训练样本
     np.savetxt('X_train.csv', X_train, delimiter=',')
     np.savetxt('Y_train.csv', Y_train, delimiter=',')
+    ##良性样本
+    np.savetxt('JSMF_X_begin.csv', X_begin, delimiter=',')
+    np.savetxt('JSMF_Y_begin.csv', Y_begin, delimiter=',')
     #正常的恶意样本
     np.savetxt('JSMF_X_normal.csv', X_normal, delimiter=',')
     np.savetxt('JSMF_Y_normal.csv', Y_normal, delimiter=',')
