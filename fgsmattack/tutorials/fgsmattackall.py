@@ -92,8 +92,8 @@ def main():
     allX, allY = [], []  # [[样本1迭代次数.....][样本2迭代次数....]....] [[bestvalues...][bestvalues...]]
 
 
-    #for i in range(len(val_data)):
-    for i in range(5):
+    for i in range(len(val_data)):
+    # for i in range(5):
         if val_labels[i] == 1:
             malwarenumber = malwarenumber + 1
             data = val_data[i:i + 1]
@@ -142,12 +142,12 @@ def main():
     # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
     save_name = "AllMalwarefgsmfeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
     # 迭代次数和fitness图
-    ut.plotgraph(allX, allY,
-                 "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
-                 save_name)
-    # ut.plotgraph(allX[0:30], allY[0:30],
+    # ut.plotgraph(allX, allY,
     #              "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
     #              save_name)
+    ut.plotgraph(allX[0:30], allY[0:30],
+                 "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
+                 save_name)
 
 
 

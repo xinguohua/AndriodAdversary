@@ -7,13 +7,26 @@
 计算全部软件和恶意软件的特征数量，1分位数，均值，3分位数，中位数
 
 
-# data
+# 二 data
 数据文件夹
 
-训练数据 测试数据 一行测试数据
+训练数据 x_train01.csv  y_train01.csv
 
+测试数据  x_test01.csv  y_test01.csv 
 
-# 二 malwareclassification
+一行测试数据 one_row.csv
+
+对xxx_xxx架构下攻击得到对抗样本
+## jsmf
+原始恶意软件及其标签 
+JSMF_xxx_xxx_X_normal.csv JSMF_xxx_xxx_Y_normal.csv
+jsmf对抗恶意软件及其标签  
+JSMF_200_200_X_adv.csv JSMF_200_200_Y_adv.csv
+deepfool_xxx_xxx.csv
+fgsm_xxx_xxx.csv
+onefeature_xxx_xxx.csv
+
+# 三 malwareclassification
 
 ## nn_grid_search.py
 
@@ -52,7 +65,7 @@ DNN模型训练了13种架构
 选出三种架构的DNN架构，准确率高的，FNR低的，介于两者之间的。
 
 
-# 三 oneFeature文件夹(针对200_200以后换架构)
+# 四 oneFeature文件夹(针对200_200以后换架构)
 实施oneFeature攻击 
 ## tutorials文件夹
 过程
@@ -82,7 +95,7 @@ DNN模型训练了13种架构
 	* 不同攻击重复画即可（以后）
 	
 
-# 四 deepfool文件夹(针对200_200以后换架构)
+# 五 deepfool文件夹(针对200_200以后换架构)
 实施deepfool+oneFeature攻击 
 ## tutorials文件夹
 过程
@@ -111,7 +124,7 @@ DNN模型训练了13种架构
 
 	* 不同攻击重复画即可（以后）
 
-# 五 fgsmattack文件夹(针对200_200以后换架构)
+# 六 fgsmattack文件夹(针对200_200以后换架构)
 实施fgsm+oneFeature攻击 
 ## tutorials文件夹
 过程
@@ -144,30 +157,52 @@ DNN模型训练了13种架构
 
 
 
+# 七 JSMF文件夹(针对200_200以后换架构)
+## tutorial_jsmf_k.py
+对几个恶意软件进行jsmf攻击
+得到原始恶意软件及其标签
+得到对抗恶意软件及其标签
+得到平均干扰
 
-下午目标
-jsmf攻击,
-图存成图片****
-制作对抗样本-----不同攻击对抗样本检测正确率，平均扰动
-3 不同架构DNN
-4 开发第二种攻击模式
-5  文字部分
-6 防御部分.。。。。。。
+## attackall_jsmf.py
+对测试集恶意软件进行jsmf攻击 
+
+得到原始恶意软件及其标签 JSMF_xxx_xxx_X_normal.csv JSMF_xxx_xxx_Y_normal.csv
+
+得到对抗恶意软件及其标签  JSMF_200_200_X_adv.csv JSMF_200_200_Y_adv.csv
+
+保存到/data/jsmf  
+得到平均干扰
 
 
-功能
-（分别针对不同架构）
-* 计算平均扰动
-* 得到对抗样本
-* 不同攻击fit值变化
 
-1 对于一个攻击
-* 计算平均扰动
-* 得到对抗样本
-* 不同攻击fit值变化（画图）
-  * 画两个图  
-  * 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）******遇到问题 量级相差特别大
-  * bestvalue的曲线（每次修改特征的bestvalue）(可能要多种攻击进行比较)
+
+
+# 六 defence文件夹(只针对200_200一个架构)
+## detector
+
+
+
+
+平均扰动针对三个攻击模型(服务器上待做)--已完成
+改造所有攻击生成对抗样本样本标签，普通恶意样本，普通恶意标签
+不同攻击样本对不同DNN模型的准确率，FNR---以及误分类率
+	思路：
+		* 攻击得到对抗样本，对抗样本的标签1（改造所有攻击）----直接放入模型DNN模型的准确率，FNR，
+		* 原始样本（改造所有攻击），原始样本标签（对抗样本标签一样） ----直接放入模型FNR 两个的FNR相减得到误分类率	
+	
+
+图存成图片****  待做
+
+
+
+不同架构DNN重复上述操作 ****  待做
+开发第二种攻击模式 ****  待做
+文字部分 ****  待做
+
+6 防御部分 待做
+
+
 
 
 
