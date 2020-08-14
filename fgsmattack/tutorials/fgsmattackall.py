@@ -18,7 +18,6 @@ FGSM tutorial on mnist using advbox tool.
 FGSM method is non-targeted attack while FGSMT is targeted attack.
 """
 from __future__ import print_function
-from gradient.sa import utilities as ut
 import sys
 sys.path.append("..")
 import logging
@@ -30,9 +29,10 @@ import numpy as np
 from PIL import Image
 #pip install Pillow
 
-from gradient.advbox.adversary import Adversary
-from gradient.advbox.attacks.deepfool import DeepFoolAttack
-from gradient.advbox.models.keras import KerasModel
+from fgsmattack.advbox.adversary import Adversary
+from fgsmattack.advbox.attacks.deepfool import DeepFoolAttack
+from fgsmattack.advbox.models.keras import KerasModel
+from fgsmattack.sa import utilities as ut
 
 import tensorflow as tf
 
@@ -77,9 +77,10 @@ def main():
     tlabel = 0
 
     #读入所有样本数据
-    #val_data = np.loadtxt(open("..//..//data//x_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
-    #val_labels = np.loadtxt(open("..//..//data//y_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
-    val_data = np.loadtxt(open("D:\\data\\onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
+    val_data = np.loadtxt(open("..//..//data//x_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
+    val_labels = np.loadtxt(open("..//..//data//y_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
+    #data = np.loadtxt(open("D:\\data\\onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
+
     # 测试集中恶意软件的数量
     malwarenumber = 0
     # 所有扰动的数量
@@ -90,10 +91,10 @@ def main():
     # 画图
     allX, allY = [], []  # [[样本1迭代次数.....][样本2迭代次数....]....] [[bestvalues...][bestvalues...]]
 
-    # for i in range(len(val_data)):
-    # 测试
+
+    #for i in range(len(val_data)):
     for i in range(5):
-        #if val_labels[i] == 1:
+        if val_labels[i] == 1:
             malwarenumber = malwarenumber + 1
             data = val_data[i:i + 1]
             data=np.matrix(data)
@@ -105,11 +106,8 @@ def main():
             adversary.set_target(is_targeted_attack=True, target_label=tlabel)
 
             # deepfool targeted attack
-            adversary = attack(adversary, **attack_config)
-
-            # deepfool targeted attack
             # 对抗样本，改变特征的数量，迭代次数横坐标，bestvalues纵坐标
-            adversary, featurenumber, x, y = attack(adversary, **attack_config)
+            adversary,featurenumber,x,y = attack(adversary, **attack_config)
             allchangefeaturenumber = allchangefeaturenumber + featurenumber
 
             # 增加特征x[....]==返回修改特征的迭代次数横坐标
@@ -142,14 +140,19 @@ def main():
     # 画图
     # 单个样本 过程
     # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
-    save_name = "AllMalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
+    save_name = "AllMalwarefgsmfeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
     # 迭代次数和fitness图
-    # ut.plotgraph(allX[0:30], allY[0:30],
-    #              "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
-    #              save_name)
     ut.plotgraph(allX, allY,
                  "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
                  save_name)
+    # ut.plotgraph(allX[0:30], allY[0:30],
+    #              "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
+    #              save_name)
+
+
+
+
+
 
 
 if __name__ == '__main__':
