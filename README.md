@@ -31,9 +31,32 @@ JSMF_200_200_X_adv.csv JSMF_200_200_Y_adv.csv
 
 得到原始良性软件及其标签
 JSMF_200_200__X_begin.csv JSMF_200_200__Y_begin.csv
-deepfool_xxx_xxx.csv
-fgsm_xxx_xxx.csv
-onefeature_xxx_xxx.csv
+## deepfool
+原始恶意软件及其标签 
+deepfool_xxx_xxx_X_normal.csv deepfool_xxx_xxx_Y_normal.csv
+deepfool对抗恶意软件及其标签  
+deepfool_200_200_X_adv.csv deepfool_200_200_Y_adv.csv
+
+得到原始良性软件及其标签
+deepfool_200_200__X_begin.csv deepfool_200_200__Y_begin.csv
+## fgsm
+原始恶意软件及其标签 
+fgsm_xxx_xxx_X_normal.csv fgsm_xxx_xxx_Y_normal.csv
+fgsm对抗恶意软件及其标签  
+fgsm_200_200_X_adv.csv fgsm_200_200_Y_adv.csv
+
+得到原始良性软件及其标签
+fgsm_200_200__X_begin.csv fgsm_200_200__Y_begin.csv
+## fgsm
+原始恶意软件及其标签 
+onefeature_xxx_xxx_X_normal.csv onefeature_xxx_xxx_Y_normal.csv
+onefeature对抗恶意软件及其标签  
+onefeature_200_200_X_adv.csv onefeature_200_200_Y_adv.csv
+
+得到原始良性软件及其标签
+onefeature_200_200__X_begin.csv onefeature_200_200__Y_begin.csv
+## features
+feature_names.csv
 
 # 三 malwareclassification
 
@@ -93,7 +116,14 @@ DNN模型训练了13种架构
 ### oneFeatureattackall.py
 * 进行oneFeature测试 测试整个测试集的恶意软件去生成对抗样本
 * 返回平均扰动数量=扰动总数/恶意软件数量
-* 针对某一架构DNN的对抗样本存到**onefeature_xxx_xxx.csv**中
+* 针对某一架构DNN(到时候csv修改名字)
+* 
+	得到原始良性软件及其标签onefeature_200_200__X_begin.csv 
+	onefeature_200_200__Y_begin.csv
+	
+	得到原始恶意软件及其标签 onefeature_xxx_xxx_X_normal.csv onefeature_xxx_xxx_Y_normal.csv
+	
+	得到对抗恶意软件及其标签  onefeature_200_200_X_adv.csv onefeature_200_200_Y_adv.csv
 
 * 画图
 	* 加时间戳---过程（单个样本）每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（黑色虚线）      	量级相差特别大，为避免量级相差特别大的原因采用归一化
@@ -123,7 +153,14 @@ DNN模型训练了13种架构
 ### deepfooattackall.py
 * 进行deepfool测试 测试整个测试集的恶意软件去生成对抗样本
 * 返回平均扰动数量=扰动总数/恶意软件数量
-* 针对某一架构DNN的对抗样本存到**deepfool_xxx_xxx.csv**中
+* 针对某一架构DNN(到时候csv修改名字)
+* 
+	得到原始良性软件及其标签deepfool_200_200__X_begin.csv 
+	deepfool_200_200__Y_begin.csv
+	
+	得到原始恶意软件及其标签 deepfool_xxx_xxx_X_normal.csv deepfool_xxx_xxx_Y_normal.csv
+	
+	得到对抗恶意软件及其标签  deepfool_200_200_X_adv.csv deepfool_200_200_Y_adv.csv
 
 * 画图
 	* 加时间戳---过程（单个样本）每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（黑色虚线）      	量级相差特别大，为避免量级相差特别大的原因采用归一化
@@ -154,7 +191,14 @@ DNN模型训练了13种架构
 ### fgsmttackall.py
 * 进行deepfool测试 测试整个测试集的恶意软件去生成对抗样本
 * 返回平均扰动数量=扰动总数/恶意软件数量
-* 针对某一架构DNN的对抗样本存到**fgsm_xxx_xxx.csv**中
+* 针对某一架构DNN(到时候csv修改名字)
+* 
+	得到原始良性软件及其标签fgsm_200_200__X_begin.csv 
+	fgsm_200_200__Y_begin.csv
+	
+	得到原始恶意软件及其标签 fgsm_xxx_xxx_X_normal.csv fgsm_xxx_xxx_Y_normal.csv
+	
+	得到对抗恶意软件及其标签  fgsm_200_200_X_adv.csv fgsm_200_200_Y_adv.csv
 
 * 画图
 	* 加时间戳---过程（单个样本）每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（黑色虚线）      	量级相差特别大，为避免量级相差特别大的原因采用归一化
@@ -192,20 +236,46 @@ JSMF_200_200__Y_begin.csv
 得到平均干扰
 
 
+# 八 第二种攻击模式 secondattack**** （难待突破）
+* featurenames.csv筛选哪些特征(code）不能攻击
+	
+![](imgs/features.png) 
+* 改攻击算法的输入还原输出
+1 记录不能更改的特征对应的值A feature_names.csv
+先找索引，记录值
+	
+2 将这些不能更改的值设置成1进入
+
+3 攻击完在将不能更改的值由1还原成A
 
 
-
-# 六 defence文件夹(只针对200_200一个架构)
+# 九 defence文件夹(只针对200_200一个架构)
 ## detector
+### extract_characteristics.py
+1 加上不同的攻击参数 224 换路径
+2 重新设置bandwith 81
+3 统计adv和normal对应值的信息
+	kd
+	lid
+	Uncertities(另一个项目)
 
+### detect_adv_examples.py
+1 加上不同的攻击参数 
+2 两种情况 
+训练集攻击和测试集攻击相同
+训练集攻击和测试集攻击不同
+Uncertities(另一个项目)pytorch
+3 分类器的效率
+### detect_and_detect.py
+经过检测器在经过分类器
+## 不同防御方法的比较
 
-
-# 七 服务器上的操作
+# 十 服务器上的操作
 ## 1 平均扰动针对三个攻击模型(服务器上待做)--已完成
 直接运行所有攻击文件夹下的attackall
 ![](imgs/平均扰动.png) 
 
-不同架构DNN重复上述操作 换加载模型
+不同架构DNN重复上述操作 换加载模型，换生成样本的名字fgsm_xxx_xxx_X_begin.csv
 ## 2 选定一DNN模型不同攻击样本的准确率，FNR---以及误分类率
 ![](imgs/攻击模型准确率.png) 
 
@@ -217,19 +287,8 @@ JSMF_200_200__Y_begin.csv
 
 
 
-# 待做
-改造所有攻击生成
-对抗样本及样本标签
-普通恶意样本，普通恶意标签，
-良性样本，良性样本标签
-***** 只改了oneFeature的 还没有检验Analyze/evaluate_adv.py
 
-	思路：
-		* 攻击得到对抗样本，对抗样本的标签1（改造所有攻击）----直接放入模型DNN模型的准确率，FNR，
-		* 原始样本（改造所有攻击），原始样本标签（对抗样本标签一样） ----直接放入模型FNR 两个的FNR相减得到误分类率	
-	
 
-图存成图片****  待做
 开发第二种攻击模式 ****  待做
 文字部分 ****  待做
 

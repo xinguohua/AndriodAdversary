@@ -458,15 +458,13 @@ def get_lids_random_batch(model, X, X_adv,k=10, batch_size=100):
     """
     Get the local intrinsic dimensionality of each Xi in X_adv
     estimated by k close neighbours in the random batch it lies in.
-    :param model:
-    :param X: normal images
-    :param X_noisy: noisy images
-    :param X_adv: advserial images    
-    :param dataset: 'mnist', 'cifar', 'svhn', has different DNN architectures  
+    :param model:模型
+    :param X: normal 正常恶意软件
+    :param X_adv: advserial 对抗恶意软件
     :param k: the number of nearest neighbours for LID estimation  
     :param batch_size: default 100
-    :return: lids: LID of normal images of shape (num_examples, lid_dim)
-            lids_adv: LID of advs images of shape (num_examples, lid_dim)
+    :return: lids: LID of normal malware of shape (num_examples, lid_dim)
+            lids_adv: LID of advs malware of shape (num_examples, lid_dim)
     """
     # get deep representations
     # get deep representations 得到深层的表示
@@ -511,7 +509,6 @@ def get_lids_random_batch(model, X, X_adv,k=10, batch_size=100):
         lids_adv.extend(lid_batch_adv)
         # print("lids: ", lids.shape)
         # print("lids_adv: ", lids_noisy.shape)
-        # print("lids_noisy: ", lids_noisy.shape)
 
     lids = np.asarray(lids, dtype=np.float32)
     lids_adv = np.asarray(lids_adv, dtype=np.float32)
@@ -760,17 +757,16 @@ def block_split(X, Y):
     """
     print("Isolated split 80%, 20% for training and testing")
     num_samples = X.shape[0]
-    partition = int(num_samples / 3)
+    partition = int(num_samples / 2)
     X_adv, Y_adv = X[:partition], Y[:partition]
-    X_norm, Y_norm = X[partition: 2*partition], Y[partition: 2*partition]
-    X_noisy, Y_noisy = X[2*partition:], Y[2*partition:]
-    num_train = int(partition*0.008) * 100
+    X_norm, Y_norm = X[partition:], Y[partition:]
+    # num_train = int(partition*0.008) * 100
+    num_train = int(partition * 0.8)
+    X_train = np.concatenate((X_norm[:num_train], X_adv[:num_train]))
+    Y_train = np.concatenate((Y_norm[:num_train], Y_adv[:num_train]))
 
-    X_train = np.concatenate((X_norm[:num_train], X_noisy[:num_train], X_adv[:num_train]))
-    Y_train = np.concatenate((Y_norm[:num_train], Y_noisy[:num_train], Y_adv[:num_train]))
-
-    X_test = np.concatenate((X_norm[num_train:], X_noisy[num_train:], X_adv[num_train:]))
-    Y_test = np.concatenate((Y_norm[num_train:], Y_noisy[num_train:], Y_adv[num_train:]))
+    X_test = np.concatenate((X_norm[num_train:],  X_adv[num_train:]))
+    Y_test = np.concatenate((Y_norm[num_train:],  Y_adv[num_train:]))
 
     return X_train, Y_train, X_test, Y_test
 

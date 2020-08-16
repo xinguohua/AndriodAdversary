@@ -6,19 +6,17 @@ import argparse
 import numpy as np
 from sklearn.preprocessing import scale, MinMaxScaler, StandardScaler
 from sklearn.metrics import accuracy_score, precision_score, recall_score
-from util import (random_split, block_split, train_lr, compute_roc)
+from defence.detector.util import (random_split, block_split, train_lr, compute_roc)
 from sklearn.externals import joblib
 
 DATASETS = ['mnist', 'cifar', 'svhn']
-ATTACKS = ['fgsm', 'bim-a', 'bim-b', 'jsma', 'cw-l2']
+ATTACKS = ['fgsm', 'bim-a', 'bim-b', 'jsma', 'cw-l2','onefeature']
 CHARACTERISTICS = ['kd', 'bu', 'lid']
 PATH_DATA = "data/"
 PATH_IMAGES = "plots/"
 
 def load_characteristics(attack, characteristics):
     """
-    Load multiple characteristics for one dataset and one attack.
-    :param dataset: 
     :param attack: 
     :param characteristics: 
     :return: 
@@ -41,10 +39,11 @@ def load_characteristics(attack, characteristics):
     return X, Y
 
 def detect(args):
+    #后续攻击参数修改
     assert args.attack in ATTACKS, \
-        "Train attack must be either 'jsma', 'one-pixel'"
+        "Train attack must be either 'jsma', 'onefeature'"
     assert args.test_attack in ATTACKS, \
-        "Test attack must be either 'jsma', 'one-pixel'"
+        "Test attack must be either 'jsma', 'onefeature'"
     characteristics = args.characteristics.split(',')
     #遍历所有的特征
     for char in characteristics:
@@ -62,12 +61,14 @@ def detect(args):
     # X = scale(X) # Z-norm
 
     # test attack is the same as training attack
+    #测试攻击与训练攻击相同
     X_train, Y_train, X_test, Y_test = block_split(X, Y)
+
     # 训练和测试不相等后续改
     if args.test_attack != args.attack:
         # test attack is a different attack
         print("Loading test attack: %s" % args.test_attack)
-        X_test, Y_test = load_characteristics(args.dataset, args.test_attack, characteristics)
+        X_test, Y_test = load_characteristics(args.test_attack, characteristics)
         _, _, X_test, Y_test = block_split(X_test, Y_test)
 
         # apply training normalizer
@@ -82,7 +83,7 @@ def detect(args):
     print("LR Detector on [ train_attack: %s, test_attack: %s] with:" %
                                         (args.attack, args.test_attack))
     lr = train_lr(X_train, Y_train)
-    joblib.dump(lr,"logistic_kd_bu.model")  # 加载模型,会保存该model文件
+    #joblib.dump(lr,"logistic_kd_bu.model")  # 加载模型,会保存该model文件
 
     ## Evaluate detector
     y_pred = lr.predict_proba(X_test)[:, 1]
@@ -101,17 +102,20 @@ def detect(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    #后续改成自己的攻击
     parser.add_argument(
         '-a', '--attack',
-        help="Attack to use train the discriminator; either 'fgsm', 'bim-a', 'bim-b', 'jsma' 'cw-l2'",
+        help="Attack to use train the discriminator; either 'fgsm', 'bim-a', 'bim-b', 'jsma' 'cw-l2','onefeature'",
         required=True, type=str
     )
+    ## 提取特征
     parser.add_argument(
         '-r', '--characteristics',
         help="Characteristic(s) to use any combination in ['kd', 'bu', 'lid'] "
              "separated by comma, for example: kd,bu",
         required=True, type=str
     )
+    #对鉴别器进行交叉测试的特征。
     parser.add_argument(
         '-t', '--test_attack',
         help="Characteristic(s) to cross-test the discriminator.",

@@ -85,8 +85,18 @@ def main():
     malwarenumber = 0
     # 所有扰动的数量
     allchangefeaturenumber = 0
+
+    # 良性
+    X_begin = []
+    Y_begin = []
+    # # 恶意正常
+    X_normal = []
+    Y_normal = []
+    # 恶意对抗的
     # 存放所有对抗样本的list
     advmalware = []
+    Y_adv = []
+
     # 画图
     allX, allY = [], []  # [[样本1迭代次数.....][样本2迭代次数....]....] [[bestvalues...][bestvalues...]]
 
@@ -116,13 +126,20 @@ def main():
             allY.append(y)
 
             if adversary.is_successful():
+                X_normal.append(adversary.original[0])
+                Y_normal.append(1)
                 advmalware.append(adversary.adversarial_example[0])
+                Y_adv.append(1)
                 print(
                     'nonlinear attack success, adversarial_label=%d'
                     % (adversary.adversarial_label))
             del adversary
             print("deepfool target attack done==========+"+str(i)+"个样本完成")
-
+        else:
+            # 添加良性软件
+            y = val_data[i:i + 1][0]
+            X_begin.append(y)
+            Y_begin.append(0)
     # 打印所有扰动的数量
     print("所有扰动的数量" + str(allchangefeaturenumber))
     # 打印恶意软件的数量
@@ -132,15 +149,28 @@ def main():
     print("平均扰动" + str(avechangefeaturenumber))
 
     # 针对某一架构DNN的对抗样本存到csv文件中
+    X_begin = np.mat(X_begin)
+    Y_begin = np.mat(Y_begin).T
+    X_normal = np.mat(X_normal)
+    Y_normal = np.mat(Y_normal).T
     advmalware = np.mat(advmalware)
-    np.savetxt('..//..//data//deepfool_200_200.csv', advmalware, delimiter=',')
+    Y_adv = np.mat(Y_adv).T
+
+    np.savetxt('..//..//data//deepfool//deepfool_200_200_X_begin.csv', X_begin, delimiter=',')
+    np.savetxt('..//..//data//deepfool//deepfool_200_200_Y_begin.csv', Y_begin, delimiter=',')
+    np.savetxt('..//..//data//deepfool//deepfool_200_200_X_normal.csv', X_normal, delimiter=',')
+    np.savetxt('..//..//data//deepfool//deepfool_200_200_Y_normal.csv', Y_normal, delimiter=',')
+    np.savetxt('..//..//data//deepfool//deepfool_200_200_X_adv.csv', advmalware, delimiter=',')
+    np.savetxt('..//..//data//deepfool//deepfool_200_200_Y_adv.csv', Y_adv, delimiter=',')
+
+
 
     # 画图
     # 单个样本 过程
     # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
     save_name = "AllMalwaredeepfoolfeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
     # 迭代次数和fitness图
-    ut.plotgraph(allX, allY,
+    ut.plotgraph(allX[0:30], allY[0:30],
                  "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
                  save_name)
 

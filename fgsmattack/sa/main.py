@@ -1,7 +1,7 @@
-from gradient.sa import utilities as ut
-from gradient.sa  import KnapSack as KS
+from fgsmattack.sa import utilities as ut
+from fgsmattack.sa  import KnapSack as KS
 import numpy as np
-from gradient.sa import Algorithms
+from fgsmattack.sa import Algorithms
 import os
 #origin
 class Main(object):
