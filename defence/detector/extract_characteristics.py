@@ -22,7 +22,10 @@ BANDWIDTHS = {'mnist': 3.7926, 'cifar': 0.26, 'svhn': 1.00}
 #               'cifar': [0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000],
 #               'svhn': [0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1000, 0.1274, 0.1000, 0.1000]}
 
-PATH_DATA = "data/"
+#测试时用的路径
+# PATH_DATA = "data/"
+#正式的路径
+PATH_DATA = "..//..//data//"
 PATH_IMAGES = "plots/"
 
 def merge_and_generate_labels(X_pos, X_neg):
@@ -135,8 +138,12 @@ def get_lid(model, X_test,X_test_adv, k=10, batch_size=100):
 
 
 def main(args):
-    assert args.characteristic in ['kd', 'bu', 'lid', 'km', 'all'], \
-        "Characteristic(s) to use 'kd', 'bu', 'lid', 'km', 'all'"   #选择提取的特征
+    assert args.attack in ['jsmf', 'deepfool', 'onefeature', 'fgsm'], \
+        "Attack parameter must be either 'jsmf', 'deepfool', 'onefeature', 'fgsm'"
+    #提取的特征
+    assert args.characteristic in ['kd','lid'], \
+        "Characteristic(s) to use 'kd', 'lid'"   #选择提取的特征
+
     #加载模型文件（只针对200_200架构）
     model_file = "..//..//malwareclassification//models//best_model_200_200.h5"
 
@@ -148,37 +155,38 @@ def main(args):
     # Load the dataset  加载数据
     # #测试所用小数据（本文件夹中的data数据）
     # #训练样本其实用的是测试样本 到时候换成大数据
-    X_train=np.loadtxt(".//data//X_train.csv",delimiter=",", skiprows=0,dtype=np.float32)
-    Y_train = np.loadtxt(".//data//Y_train.csv",delimiter=",", skiprows=0,dtype=np.float32)
-    #正常的恶意样本 到时候换成大数据 尺寸X_normal与X_adv一样
-    X_normal=np.loadtxt('.//data//X_normal.csv',delimiter=",", skiprows=0,dtype=np.float32)
-    Y_normal=np.loadtxt('.//data//Y_normal.csv',delimiter=",", skiprows=0,dtype=np.float32)
-    #对抗的恶意样本 到时候换成大数据
-    X_adv=np.loadtxt('.//data//X_adv.csv',delimiter=",", skiprows=0,dtype=np.float32)
-    Y_adv=np.loadtxt('.//data//Y_adv.csv',delimiter=",", skiprows=0,dtype=np.float32)
+    # X_train=np.loadtxt(".//data//X_train.csv",delimiter=",", skiprows=0,dtype=np.float32)
+    # Y_train = np.loadtxt(".//data//Y_train.csv",delimiter=",", skiprows=0,dtype=np.float32)
+    # #正常的恶意样本 到时候换成大数据 尺寸X_normal与X_adv一样
+    # X_normal=np.loadtxt('.//data//X_normal.csv',delimiter=",", skiprows=0,dtype=np.float32)
+    # Y_normal=np.loadtxt('.//data//Y_normal.csv',delimiter=",", skiprows=0,dtype=np.float32)
+    # #对抗的恶意样本 到时候换成大数据
+    # X_adv=np.loadtxt('.//data//X_adv.csv',delimiter=",", skiprows=0,dtype=np.float32)
+    # Y_adv=np.loadtxt('.//data//Y_adv.csv',delimiter=",", skiprows=0,dtype=np.float32)
 
     # 大数据
     # 训练样本 在服务器上换成大数据
-    # X_train = np.loadtxt(
-    #     "D:\\安全课程\\android detection\\zhenghe\\lid_new\\X_train.csv",
-    #     delimiter=",", skiprows=0, dtype=np.float32)
-    # Y_train = np.loadtxt(
-    #     "D:\\安全课程\\android detection\\zhenghe\\lid_new\\Y_train.csv",
-    #     delimiter=",", skiprows=0, dtype=np.float32)
-    # # 正常的恶意样本 到时候换成大数据 尺寸X_normal与X_adv一样
-    # X_normal = np.loadtxt(
-    #     'D:\\安全课程\\android detection\\zhenghe\\lid_new\\X_normal.csv',
-    #     delimiter=",", skiprows=0, dtype=np.float32)
-    # Y_normal = np.loadtxt(
-    #     'D:\\安全课程\\android detection\\zhenghe\\lid_new\\Y_normal.csv',
-    #     delimiter=",", skiprows=0, dtype=np.float32)
-    # # 对抗的恶意样本 到时候换成大数据
-    # X_adv = np.loadtxt(
-    #     'D:\\安全课程\\android detection\\zhenghe\\lid_new\\X_adv.csv',
-    #     delimiter=",", skiprows=0, dtype=np.float32)
-    # Y_adv = np.loadtxt(
-    #     'D:\\安全课程\\android detection\\zhenghe\\lid_new\\Y_adv.csv',
-    #     delimiter=",", skiprows=0, dtype=np.float32)
+    #其实是测试数据
+    X_train = np.loadtxt(
+        PATH_DATA+"x_test01.csv",
+        delimiter=",", skiprows=0, dtype=np.float32)
+    Y_train = np.loadtxt(
+        PATH_DATA+"y_test01.csv",
+        delimiter=",", skiprows=0, dtype=np.float32)
+    # 正常的恶意样本 到时候换成大数据 尺寸X_normal与X_adv一样
+    X_normal = np.loadtxt(
+        PATH_DATA+args.attack+'//'+args.attack+'_200_200_X_normal.csv',
+        delimiter=",", skiprows=0, dtype=np.float32)
+    Y_normal = np.loadtxt(
+        PATH_DATA+args.attack+'//'+args.attack+'_200_200_Y_normal.csv',
+        delimiter=",", skiprows=0, dtype=np.float32)
+    # 对抗的恶意样本 到时候换成大数据
+    X_adv = np.loadtxt(
+        PATH_DATA+args.attack+'//'+args.attack+'_200_200_X_adv.csv',
+        delimiter=",", skiprows=0, dtype=np.float32)
+    Y_adv = np.loadtxt(
+        PATH_DATA+args.attack+'//'+args.attack+'_200_200_Y_adv.csv',
+        delimiter=",", skiprows=0, dtype=np.float32)
     print('Loading the data ...')
 
 
@@ -210,7 +218,7 @@ def main(args):
         #要改############
         bandwidth =3.7926
         #攻击换成参数
-        file_name = os.path.join(PATH_DATA, 'kd_jsma.npy' )
+        file_name = os.path.join(PATH_DATA, 'characteristic//%s_%s.npy'  % (args.characteristic, args.attack))
         # 合起来合成两列 一列数据 一列标签
         data = np.concatenate((characteristics, labels), axis=1)
         np.save(file_name, data)
@@ -220,8 +228,7 @@ def main(args):
         print("LID: [characteristic shape: ", characteristics.shape, ", label shape: ", labels.shape)
 
         # save to file
-        # file_name = os.path.join(PATH_DATA, 'lid_%s_%s.npy' % (args.dataset, args.attack))
-        file_name = os.path.join(PATH_DATA, 'lid_jsma.npy')
+        file_name = os.path.join(PATH_DATA, 'characteristic//%s_%s.npy'  % (args.characteristic, args.attack))
         data = np.concatenate((characteristics, labels), axis=1)
         np.save(file_name, data)
 
@@ -229,11 +236,16 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-
-    #提取的特征
+    #选择对应的攻击（样本）提取特征
+    parser.add_argument(
+        '-a', '--attack',
+        help="Attack to use; either 'jsmf', 'deepfool', 'onefeature', 'fgsm' ",
+        required=True, type=str
+    )
+    #从(对抗样本)提取的特征
     parser.add_argument(
         '-r', '--characteristic',
-        help="Characteristic(s) to use 'kd', 'bu', 'lid' 'km' or 'all'",
+        help="Characteristic(s) to use 'kd','lid'",
         required=True, type=str
     )
     #lid的参数

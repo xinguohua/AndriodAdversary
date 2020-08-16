@@ -8,11 +8,18 @@
 
 ## evaluate_adv.py
 选定一种分类器（加载一个特定的模型） 看不同攻击的效果（不同数据集）
+
 正常恶意样本+良性软件的准确率，FNR，FPR
+
 评价对抗样本+良性软件的准确率，FNR，FPR
+
 正常和对抗计算误分类率(两个FNR相减)
 
-
+## characteristicsAnalyse.py
+分析不同攻击（样本）下的特征（kd,bu）区分效果
+* 读取特征npy文件
+* 比较npy文件
+>1一个数 <1一个数
 # 二 data
 数据文件夹
 
@@ -251,14 +258,51 @@ JSMF_200_200__Y_begin.csv
 
 # 九 defence文件夹(只针对200_200一个架构)
 ## detector
-### extract_characteristics.py
-1 加上不同的攻击参数 224 换路径
-2 重新设置bandwith 81
-3 统计adv和normal对应值的信息
-	kd
-	lid
-	Uncertities(另一个项目)
+### data
+测试数据
 
+X_adv.csv,Y_adv.csv对抗恶意样本
+
+X_nomal.csv，Y_normal 正常恶意样本
+
+X_train,Y_train 训练样本（其实是对应的test测试数据）
+### extract_characteristics.py
+对不同攻击（样本）得到两种特征lid,kd
+
+运行的参数 -a deepfool -r lid -k 20 -b 100
+
+-a 'jsmf', 'deepfool', 'onefeature', 'fgsm'
+
+-r 'kd','lid'
+
+# 重新设置bandwith*** （难待突破）
+# 统计adv和normal对应值的信息（缺少Uncertites部分，待完全）
+	kd
+	Uncertities(另一个项目)
+### Uncertainty(文件夹--提取不确定性）
+#### train_pytorh_model.py
+训练一个pytorch版本的模型 模型存放在Uncertainty/model下 保存为dnn.pkl
+#### datajsma
+小样本对抗数据 
+#### datafinal 
+大样本对抗数据 
+### featuresjsma 
+小样本结果
+### featuresfinal
+大样本结果
+### extract_smalljsma_beforemethod.py
+小样本提取 按之前的方法
+两次提取 
+normal提取一遍
+adv提取一遍
+### extract_conbineFuture.py
+大样本提取 目前的方法
+
+两次提取 
+normal提取一遍
+adv提取一遍
+### featuretoNpy.py
+提取的文件到npy形式
 ### detect_adv_examples.py
 1 加上不同的攻击参数 
 2 两种情况 
@@ -284,21 +328,47 @@ Uncertities(另一个项目)pytorch
 * 不同架构DNN重复上述操作 换加载模型 得到所有表的数据
 
 
+## 3 第二种攻击模式重复上述操作（带突破）
+
+## 4 提取不同攻击对应的对抗样本的特征
+extract_characteristics.py
+不断更换参数
+-a 'jsmf', 'deepfool', 'onefeature', 'fgsm'
+
+-r 'kd','lid'
+
+得到data/characteristic下八个文件
+
+## 5 分析kd,bu在不同攻击下的区分效果
+运行 characteristicsAnalyse.py
+
+-a fgsm -r kd，bu
+对应参数攻击参数
+'jsmf', 'deepfool', 'onefeature', 'fgsm'
+
+一次填
+
+'kd', 'bu'
+
+不停换攻击参数得到图表
+![](imgs/区分特征.png) 
 
 
 
 
 
-开发第二种攻击模式 ****  待做
-文字部分 ****  待做
 
-6 防御部分 待做
-
-
-
-
-
-
+第二种攻击模式 secondattack**** （难待突破）
+重新设置bandwith*** （难待突破）
+Uncertainty(文件夹--提取不确定性）
+路径+攻击+指标 能否参数化
+统计adv和normal对应值的信息（缺少Uncertites部分，待完全）Analyze里
+detect_adv_examples.py
+1 加上不同的攻击参数 
+2 两种情况 
+训练集攻击和测试集攻击相同
+训练集攻击和测试集攻击不同
+Uncertities(另一个项目)pytorch
 
 
 
