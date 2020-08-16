@@ -295,9 +295,20 @@ X_train,Y_train 训练样本（其实是对应的test测试数据）
 两次提取 
 normal提取一遍
 adv提取一遍
-### extract_conbineFuture.py
-大样本提取 目前的方法
+### extract_testconbineFuture.py
+大样本提取datajsma 
 
+目前的方法
+
+两次提取 
+
+normal提取一遍
+
+adv提取一遍
+### extract_conbineFuture.py
+对应的攻击样本提取 
+
+目前的方法
 两次提取 
 normal提取一遍
 adv提取一遍
@@ -360,15 +371,16 @@ extract_characteristics.py
 
 第二种攻击模式 secondattack**** （难待突破）
 重新设置bandwith*** （难待突破）
-Uncertainty(文件夹--提取不确定性）
-路径+攻击+指标 能否参数化
+Uncertainty(文件夹--提取不确定性）偶然不确定性就是小
+* extract_combineFuture.py 已改完adv的改normal的路径+攻击+指标 能否参数化
+* featuretoNpy.npy  对不同攻击 三种不确定性--->npy
 统计adv和normal对应值的信息（缺少Uncertites部分，待完全）Analyze里
 detect_adv_examples.py
 1 加上不同的攻击参数 
 2 两种情况 
 训练集攻击和测试集攻击相同
 训练集攻击和测试集攻击不同
-Uncertities(另一个项目)pytorch
+
 
 
 

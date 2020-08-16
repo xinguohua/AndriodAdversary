@@ -378,12 +378,12 @@ if __name__ == "__main__":
     if amount_malwares > 0:
         averageChanges += (average_changes / float(amount_malwares))
     print("Distortion:", averageChanges)
-    np.savetxt('..//data//jsmf//JSMF_200_200_X_normal.csv', X_normal, delimiter = ',')
-    np.savetxt('..//data//jsmf//JSMF_200_200_Y_normal.csv', Y_normal, delimiter = ',')
-    np.savetxt('..//data//jsmf//JSMF_200_200_X_adv.csv', X_adv, delimiter = ',')
-    np.savetxt('..//data//jsmf//JSMF_200_200_Y_adv.csv', Y_adv, delimiter = ',')
-    np.savetxt('..//data//jsmf//JSMF_200_200__X_begin.csv', X_begin, delimiter=',')
-    np.savetxt('..//data//jsmf//JSMF_200_200__Y_begin.csv', Y_begin, delimiter=',')
+    np.savetxt('..//data//jsmf//jsmf_200_200_X_normal.csv', X_normal, delimiter = ',')
+    np.savetxt('..//data//jsmf//jsmf_200_200_Y_normal.csv', Y_normal, delimiter = ',')
+    np.savetxt('..//data//jsmf//jsmf_200_200_X_adv.csv', X_adv, delimiter = ',')
+    np.savetxt('..//data//jsmf//jsmf_200_200_Y_adv.csv', Y_adv, delimiter = ',')
+    np.savetxt('..//data//jsmf//jsmf_200_200__X_begin.csv', X_begin, delimiter=',')
+    np.savetxt('..//data//jsmf//jsmf_200_200__Y_begin.csv', Y_begin, delimiter=',')
     print("保存成功")
 
 

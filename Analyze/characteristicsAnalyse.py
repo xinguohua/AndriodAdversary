@@ -7,7 +7,7 @@ import numpy as np
 
 
 
-CHARACTERISTICS = ['kd', 'bu', 'lid']
+CHARACTERISTICS = ['kd', 'bua','bue','buc', 'lid']
 PATH_DATA = "..//data//characteristic//"
 
 
@@ -46,7 +46,7 @@ def analysis(args):
     # 遍历所有的特征
     for char in characteristics:
         assert char in CHARACTERISTICS, \
-            "Characteristic(s) to use 'kd', 'bu', 'lid'"
+            "Characteristic(s) to use 'kd', 'bua','bue','buc', 'lid'"
         # 返回对抗样本和正常样本的值
         X_adv, X_norm = load_characteristics(args.attack, char)
         # 对抗样本特征值-正常样本
