@@ -77,8 +77,8 @@ def main():
     tlabel = 0
 
     #读入所有样本数据
-    val_data = np.loadtxt(open("..//..//data//x_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
-    val_labels = np.loadtxt(open("..//..//data//y_test01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
+    val_data = np.loadtxt(open("..//..//data//x_train01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
+    val_labels = np.loadtxt(open("..//..//data//y_train01.csv", "rb"), delimiter=",", skiprows=0, dtype=np.int32)
     #data = np.loadtxt(open("D:\\data\\onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
 
     # 测试集中恶意软件的数量
@@ -157,25 +157,14 @@ def main():
     advmalware = np.mat(advmalware)
     Y_adv = np.mat(Y_adv).T
 
-    np.savetxt('..//..//data//fgsm//fgsm_200_200_X_begin.csv', X_begin, delimiter=',')
-    np.savetxt('..//..//data//fgsm//fgsm_200_200_Y_begin.csv', Y_begin, delimiter=',')
-    np.savetxt('..//..//data//fgsm//fgsm_200_200_X_normal.csv', X_normal, delimiter=',')
-    np.savetxt('..//..//data//fgsm//fgsm_200_200_Y_normal.csv', Y_normal, delimiter=',')
-    np.savetxt('..//..//data//fgsm//fgsm_200_200_X_adv.csv', advmalware, delimiter=',')
-    np.savetxt('..//..//data//fgsm//fgsm_200_200_Y_adv.csv', Y_adv, delimiter=',')
+    np.savetxt('..//..//data//adversarytrain//fgsm_200_200_X_begin.csv', X_begin, delimiter=',')
+    np.savetxt('..//..//data//adversarytrain//fgsm_200_200_Y_begin.csv', Y_begin, delimiter=',')
+    np.savetxt('..//..//data//adversarytrain//fgsm_200_200_X_normal.csv', X_normal, delimiter=',')
+    np.savetxt('..//..//data//adversarytrain//gsm_200_200_Y_normal.csv', Y_normal, delimiter=',')
+    np.savetxt('..//..//data//adversarytrain///fgsm_200_200_X_adv.csv', advmalware, delimiter=',')
+    np.savetxt('..//..//data//adversarytrain//fgsm_200_200_Y_adv.csv', Y_adv, delimiter=',')
 
 
-    # 画图
-    # 单个样本 过程
-    # 每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（红线）
-    save_name = "AllMalwarefgsmfeaturesbestSA" + "_" + "_sa_x_fitnees_pic"
-    # 迭代次数和fitness图
-    # ut.plotgraph(allX, allY,
-    #              "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
-    #              save_name)
-    ut.plotgraph(allX[0:30], allY[0:30],
-                 "allmalwarefeaturesbestSA" + "_" + "_sa_x_fitnees_pic",
-                 save_name)
 
 
 

@@ -26,7 +26,7 @@ BANDWIDTHS = {'mnist': 3.7926, 'cifar': 0.26, 'svhn': 1.00}
 # PATH_DATA = "data/"
 #正式的路径
 PATH_DATA = "..//..//data//"
-PATH_IMAGES = "plots/"
+
 
 def merge_and_generate_labels(X_pos, X_neg):
     """
@@ -152,17 +152,7 @@ def main(args):
     # Load the model 加载模型
     model = load_model(model_file)
 
-    # Load the dataset  加载数据
-    # #测试所用小数据（本文件夹中的data数据）
-    # #训练样本其实用的是测试样本 到时候换成大数据
-    # X_train=np.loadtxt(".//data//X_train.csv",delimiter=",", skiprows=0,dtype=np.float32)
-    # Y_train = np.loadtxt(".//data//Y_train.csv",delimiter=",", skiprows=0,dtype=np.float32)
-    # #正常的恶意样本 到时候换成大数据 尺寸X_normal与X_adv一样
-    # X_normal=np.loadtxt('.//data//X_normal.csv',delimiter=",", skiprows=0,dtype=np.float32)
-    # Y_normal=np.loadtxt('.//data//Y_normal.csv',delimiter=",", skiprows=0,dtype=np.float32)
-    # #对抗的恶意样本 到时候换成大数据
-    # X_adv=np.loadtxt('.//data//X_adv.csv',delimiter=",", skiprows=0,dtype=np.float32)
-    # Y_adv=np.loadtxt('.//data//Y_adv.csv',delimiter=",", skiprows=0,dtype=np.float32)
+
 
     # 大数据
     # 训练样本 在服务器上换成大数据
@@ -189,25 +179,25 @@ def main(args):
         delimiter=",", skiprows=0, dtype=np.float32)
     print('Loading the data ...')
 
-
-    #优化正常恶意软件X_normal，对抗性集，以仅包含模型正确分类原始版本的恶意软件样本
-    ################得到X_normal样本预测正确的索引
-    inds_correct=[]
-    print(X_normal)
-    for i in range(len(X_normal)):
-        x_normal=X_normal[i:i+1]
-        #pridct=np.argmax(model.predict(x_normal))
-        #print(pridct)
-        if np.argmax(model.predict(x_normal), 1)==Y_normal[i]:
-            inds_correct.append(i) #得到所有预测正确恶意样本的索引
-    print("Number of correctly predict malware: %s" % (len(inds_correct)))
-
-    #重新修正X_normal
-    X_normal = X_normal[inds_correct]
-    X_adv = X_adv[inds_correct]
-    #修正过后的形状
-    print("X_normal: ", X_normal.shape)
-    print("X_adv: ", X_adv.shape)
+    #暂时不用 怕造成两者kd,lid与不确定性的长度不一样
+    # #优化正常恶意软件X_normal，对抗性集，以仅包含模型正确分类原始版本的恶意软件样本
+    # ################得到X_normal样本预测正确的索引
+    # inds_correct=[]
+    # print(X_normal)
+    # for i in range(len(X_normal)):
+    #     x_normal=X_normal[i:i+1]
+    #     #pridct=np.argmax(model.predict(x_normal))
+    #     #print(pridct)
+    #     if np.argmax(model.predict(x_normal), 1)==Y_normal[i]:
+    #         inds_correct.append(i) #得到所有预测正确恶意样本的索引
+    # print("Number of correctly predict malware: %s" % (len(inds_correct)))
+    #
+    # #重新修正X_normal
+    # X_normal = X_normal[inds_correct]
+    # X_adv = X_adv[inds_correct]
+    # #修正过后的形状
+    # print("X_normal: ", X_normal.shape)
+    # print("X_adv: ", X_adv.shape)
 
     if args.characteristic == 'kd':
         # extract kernel density

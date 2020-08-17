@@ -20,6 +20,14 @@
 * 读取特征npy文件
 * 比较npy文件
 >1一个数 <1一个数
+
+## evaluate_adversarytrain.py
+评价在训练的模型
+
+一共训练了两个模型 adversarial_jsmf_model.h5 adversarial_jsmf_model.h5
+
+每个模型运行下平均不同的攻击测试样本得到指标
+
 # 二 data
 数据文件夹
 
@@ -54,7 +62,7 @@ fgsm_200_200_X_adv.csv fgsm_200_200_Y_adv.csv
 
 得到原始良性软件及其标签
 fgsm_200_200__X_begin.csv fgsm_200_200__Y_begin.csv
-## fgsm
+## onefeature
 原始恶意软件及其标签 
 onefeature_xxx_xxx_X_normal.csv onefeature_xxx_xxx_Y_normal.csv
 onefeature对抗恶意软件及其标签  
@@ -194,7 +202,9 @@ DNN模型训练了13种架构
 	* 过程（单个样本）每次特征取最好best那条曲线(修改几个特征几条曲线) 所有特征取平均（黑色虚线）      	量级相差特别大，为避免量级相差特别大的原因采用归一化
     * 结果（单个样本）bestvalue的曲线（每次修改特征的bestvalue）（目前只画出一个样本）(可能要多个样本进行比较) 
 
-
+### fgsm_attacktrainset.py
+运行这攻击方法得到相应的训练数据的对抗样本 存放在data/adversarytrain中
+为后续在训练提供对抗样本
 ### fgsmttackall.py
 * 进行deepfool测试 测试整个测试集的恶意软件去生成对抗样本
 * 返回平均扰动数量=扰动总数/恶意软件数量
@@ -242,6 +252,10 @@ JSMF_200_200__Y_begin.csv
 保存到/data/jsmf  
 得到平均干扰
 
+## 8 jsmf_attacktrainset.py
+运行jsmf攻击方法得到相应的训练数据的对抗样本 存放在data/adversarytrain
+为后续在训练提供样本
+
 
 # 八 第二种攻击模式 secondattack**** （难待突破）
 * featurenames.csv筛选哪些特征(code）不能攻击
@@ -258,14 +272,6 @@ JSMF_200_200__Y_begin.csv
 
 # 九 defence文件夹(只针对200_200一个架构)
 ## detector
-### data
-测试数据
-
-X_adv.csv,Y_adv.csv对抗恶意样本
-
-X_nomal.csv，Y_normal 正常恶意样本
-
-X_train,Y_train 训练样本（其实是对应的test测试数据）
 ### extract_characteristics.py
 对不同攻击（样本）得到两种特征lid,kd
 
@@ -282,32 +288,7 @@ X_train,Y_train 训练样本（其实是对应的test测试数据）
 ### Uncertainty(文件夹--提取不确定性）
 #### train_pytorh_model.py
 训练一个pytorch版本的模型 模型存放在Uncertainty/model下 保存为dnn.pkl
-#### datajsma
-小样本对抗数据 
-#### datafinal 
-大样本对抗数据 
-#### featuresjsma 
-小样本结果
-#### featuresfinal
-大样本结果
-#### extract_smalljsma_beforemethod.py
-小样本提取 按之前的方法（测试）提取datajsma里的数据(测试) 
 
-两次提取 
-
-normal提取一遍
-
-adv提取一遍
-#### extract_testconbineFuture.py
-大样本 提取datafinal里的数据(测试) 
-
-目前的方法
-
-两次提取 
-
-normal提取一遍
-
-adv提取一遍
 #### extract_conbineFuture.py
 对应的攻击样本提取 攻击作为参数 去对应的data/攻击文件夹下提取数据
 
@@ -351,10 +332,19 @@ bua,bue,buc
 
 kd,lid,bua,bue,buc
 
-3 分类器的效率
+
 ### detect_and_detect.py
 经过检测器在经过分类器
-## 不同防御方法的比较
+## adversarytrain（再训练）
+### adversarial_train.py
+运行defence/adversarytrain/adversarial_train.py
+
+将得到的fgsm和jsmf对抗样本分别与训练数据混合训练（操作两次 更改读取数据 保存模型）
+
+得到模型
+adversarial_jsmf_model.h5
+
+adversarial_jsmf_model.h5
 
 # 十 服务器上的操作
 ## 1 平均扰动针对三个攻击模型(服务器上待做)--已完成
@@ -432,10 +422,41 @@ kd，lid,bua,bue,buc
 ![](imgs/检测.png) 
 
 
-* 第二种攻击模式 secondattack**** （难待突破）
-* 重新设置bandwith*** （难待突破）
-* detect_and_detect.py
-经过检测器在经过分类器
+## 8 攻击训练样本得到fgsm,jsmf两种训练样本的对抗样本
+运行这两种攻击方法得到相应的训练数据的对抗样本 存放在data/adversarytrain
+fgsm/tutorials/fgsm_attacktrainset.py
+jsmf/tutorials/jsmf_attacktrainset.py
+
+
+## 9 训练两种对抗样本模型（jsmf,fgsm）
+运行defence/adversarytrain/adversarial_train.py
+
+将得到的fgsm和jsmf对抗样本分别与训练数据混合训练（操作两次 更改读取数据 保存模型）
+
+得到模型
+adversarial_jsmf_model.h5
+
+adversarial_jsmf_model.h5
+
+## 10 评价在训练的模型
+
+Analyze/evaluate_adversarytrain.py
+
+共两个模型 adversarial_jsmf_model.h5 adversarial_jsmf_model.h5
+
+每个模型运行下平均不同的攻击测试样本
+
+![](imgs/在训练评价.png) 
+
+* 第二种攻击模式 secondattack**** （难待突破，开发）
+* 重新设置bandwith*** （难待突破，调试）
+* detect_and_detect.py（开发）
+	* 经过检测器 对抗样本--->恶性 
+				非对抗样本
+						--->分类器---->良性
+								 ---->恶性		
+				
+
 * 不同防御方法的比较
 
 
