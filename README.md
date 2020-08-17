@@ -16,7 +16,7 @@
 正常和对抗计算误分类率(两个FNR相减)
 
 ## characteristicsAnalyse.py
-分析不同攻击（样本）下的特征（kd,bu）区分效果
+分析不同攻击（样本）下的特征（kd,bua,buc,bue）区分效果
 * 读取特征npy文件
 * 比较npy文件
 >1一个数 <1一个数
@@ -276,9 +276,9 @@ X_train,Y_train 训练样本（其实是对应的test测试数据）
 -r 'kd','lid'
 
 # 重新设置bandwith*** （难待突破）
-# 统计adv和normal对应值的信息（缺少Uncertites部分，待完全）
-	kd
-	Uncertities(另一个项目)
+
+
+
 ### Uncertainty(文件夹--提取不确定性）
 #### train_pytorh_model.py
 训练一个pytorch版本的模型 模型存放在Uncertainty/model下 保存为dnn.pkl
@@ -286,17 +286,20 @@ X_train,Y_train 训练样本（其实是对应的test测试数据）
 小样本对抗数据 
 #### datafinal 
 大样本对抗数据 
-### featuresjsma 
+#### featuresjsma 
 小样本结果
-### featuresfinal
+#### featuresfinal
 大样本结果
-### extract_smalljsma_beforemethod.py
-小样本提取 按之前的方法
+#### extract_smalljsma_beforemethod.py
+小样本提取 按之前的方法（测试）提取datajsma里的数据(测试) 
+
 两次提取 
+
 normal提取一遍
+
 adv提取一遍
-### extract_testconbineFuture.py
-大样本提取datajsma 
+#### extract_testconbineFuture.py
+大样本 提取datafinal里的数据(测试) 
 
 目前的方法
 
@@ -305,21 +308,49 @@ adv提取一遍
 normal提取一遍
 
 adv提取一遍
-### extract_conbineFuture.py
-对应的攻击样本提取 
+#### extract_conbineFuture.py
+对应的攻击样本提取 攻击作为参数 去对应的data/攻击文件夹下提取数据
+
+攻击的参数
+
+    'jsmf', 'deepfool', 'onefeature', 'fgsm'
 
 目前的方法
+
 两次提取 
-normal提取一遍
-adv提取一遍
-### featuretoNpy.py
+normal提取一遍 攻击_200_200_X_normal.csv 得到三种不确定性文件 攻击_x_adv_不确定性.csv
+
+adv提取一遍 攻击_200_200_X_adv.csv 得到三种不确定性文件 攻击_x_normal_不确定性.csv
+
+#### featuretoNpy.py
+对不同攻击，三种不确定性的normal和adv合并
+
+攻击参数
+
+    'jsmf', 'deepfool', 'onefeature', 'fgsm'
+
+对每一种攻击 在data/characteristic 得到攻击_bua.npy、攻击_bue.npy、攻击_buc.npy 
+
+
 提取的文件到npy形式
+
+
+
 ### detect_adv_examples.py
-1 加上不同的攻击参数 
-2 两种情况 
-训练集攻击和测试集攻击相同
-训练集攻击和测试集攻击不同
-Uncertities(另一个项目)pytorch
+训练集攻击-a 'jsmf', 'deepfool', 'onefeature', 'fgsm' 测试集攻击 -t 'jsmf', 'deepfool', 'onefeature', 'fgsm'
+
+-r 
+
+kd 
+
+lid
+
+kd,lid
+
+bua,bue,buc
+
+kd,lid,bua,bue,buc
+
 3 分类器的效率
 ### detect_and_detect.py
 经过检测器在经过分类器
@@ -341,7 +372,7 @@ Uncertities(另一个项目)pytorch
 
 ## 3 第二种攻击模式重复上述操作（带突破）
 
-## 4 提取不同攻击对应的对抗样本的特征
+## 4 提取不同攻击对应的对抗样本的特征kd,lid
 extract_characteristics.py
 不断更换参数
 -a 'jsmf', 'deepfool', 'onefeature', 'fgsm'
@@ -350,36 +381,63 @@ extract_characteristics.py
 
 得到data/characteristic下八个文件
 
-## 5 分析kd,bu在不同攻击下的区分效果
+## 5 提取不同攻击对应的对抗样本的三种确定性特征
+extract_combineFuture.py
+
+不停的换参数'jsmf', 'deepfool', 'onefeature', 'fgsm' 在对应data/攻击文件夹得到 得到六种不确定性文件 攻击_x_adv_不确定性.csv、攻击_x_normal_不确定性.csv
+
+featuretoNpy.py
+
+不停地换参数'jsmf', 'deepfool', 'onefeature', 'fgsm' 
+
+对每一种攻击 在data/characteristic 得到攻击_bua.npy、攻击_bue.npy、攻击_buc.npy 
+
+## 6 分析kd,bu在不同攻击下的区分效果
 运行 characteristicsAnalyse.py
 
--a fgsm -r kd，bu
+-a fgsm -r kd，bua,buc,bue
+
 对应参数攻击参数
 'jsmf', 'deepfool', 'onefeature', 'fgsm'
 
 一次填
 
-'kd', 'bu'
+kd,bua,buc,bue
 
 不停换攻击参数得到图表
+
 ![](imgs/区分特征.png) 
 
+## 7 检测分类器训练和检测
+
+训练集攻击
+
+-a jsmf  或者 -a onefeature
+
+测试集攻击 -t 'jsmf', 'deepfool', 'onefeature', 'fgsm'
+
+-r 
+
+kd 
+
+lid
+
+kd,lid
+
+bua,bue,buc
+
+kd，lid,bua,bue,buc
 
 
+![](imgs/检测.png) 
 
 
+* 第二种攻击模式 secondattack**** （难待突破）
+* 重新设置bandwith*** （难待突破）
+* detect_and_detect.py
+经过检测器在经过分类器
+* 不同防御方法的比较
 
-第二种攻击模式 secondattack**** （难待突破）
-重新设置bandwith*** （难待突破）
-Uncertainty(文件夹--提取不确定性）偶然不确定性就是小
-* extract_combineFuture.py 已改完adv的改normal的路径+攻击+指标 能否参数化
-* featuretoNpy.npy  对不同攻击 三种不确定性--->npy
-统计adv和normal对应值的信息（缺少Uncertites部分，待完全）Analyze里
-detect_adv_examples.py
-1 加上不同的攻击参数 
-2 两种情况 
-训练集攻击和测试集攻击相同
-训练集攻击和测试集攻击不同
 
 
 

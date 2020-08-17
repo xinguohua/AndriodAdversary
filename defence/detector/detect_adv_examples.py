@@ -9,10 +9,10 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 from defence.detector.util import (random_split, block_split, train_lr, compute_roc)
 from sklearn.externals import joblib
 
-DATASETS = ['mnist', 'cifar', 'svhn']
-ATTACKS = ['fgsm', 'bim-a', 'bim-b', 'jsma', 'cw-l2','onefeature']
-CHARACTERISTICS = ['kd', 'bu', 'lid']
-PATH_DATA = "data/"
+
+ATTACKS = ['jsmf', 'deepfool', 'onefeature', 'fgsm' ]
+CHARACTERISTICS = ['kd','lid', 'bua','buc','bue']
+PATH_DATA = "..//..//data//characteristic//"
 PATH_IMAGES = "plots/"
 
 def load_characteristics(attack, characteristics):
@@ -33,7 +33,7 @@ def load_characteristics(attack, characteristics):
             #在后面跟特征
             X = np.concatenate((X, data[:, :-1]), axis=1)
         if Y is None:
-            #加标签
+            #加标签 标签只需要在加第一个特征时加一次
             Y = data[:, -1] # labels only need to load once
 
     return X, Y
@@ -41,14 +41,14 @@ def load_characteristics(attack, characteristics):
 def detect(args):
     #后续攻击参数修改
     assert args.attack in ATTACKS, \
-        "Train attack must be either 'jsma', 'onefeature'"
+        "Train attack must be either 'jsmf', 'deepfool', 'onefeature', 'fgsm'"
     assert args.test_attack in ATTACKS, \
-        "Test attack must be either 'jsma', 'onefeature'"
+        "Test attack must be either 'jsmf', 'deepfool', 'onefeature', 'fgsm'"
     characteristics = args.characteristics.split(',')
     #遍历所有的特征
     for char in characteristics:
         assert char in CHARACTERISTICS, \
-            "Characteristic(s) to use 'kd', 'bu', 'lid'"
+            "Characteristic(s) to use 'kd', 'bua','buc','bue', 'lid'"
 
     #训练集对应的攻击
     print("Loading train attack: %s" % args.attack)
@@ -105,17 +105,17 @@ if __name__ == "__main__":
     #后续改成自己的攻击
     parser.add_argument(
         '-a', '--attack',
-        help="Attack to use train the discriminator; either 'fgsm', 'bim-a', 'bim-b', 'jsma' 'cw-l2','onefeature'",
+        help="Attack to use train the discriminator; either 'jsmf', 'deepfool', 'onefeature', 'fgsm'",
         required=True, type=str
     )
-    ## 提取特征
+    ## 训练detecotor用到的攻击
     parser.add_argument(
         '-r', '--characteristics',
-        help="Characteristic(s) to use any combination in ['kd', 'bu', 'lid'] "
-             "separated by comma, for example: kd,bu",
+        help="Characteristic(s) to use any combination in ['kd','lid', 'bua','buc','bue'] "
+             "separated by comma, for example: kd,buc",
         required=True, type=str
     )
-    #对鉴别器进行交叉测试的特征。
+    #对鉴别器进行交叉测试的特征来自于哪种攻击。
     parser.add_argument(
         '-t', '--test_attack',
         help="Characteristic(s) to cross-test the discriminator.",

@@ -20,7 +20,7 @@ def load_characteristics(attack, char):
     """
     X= None
     #打印分析的特征
-    print("  -- %s" % char)
+    print(" Analyse -- %s" % char)
     #加载分析的特征文件
     file_name = os.path.join(PATH_DATA, "%s_%s.npy" % (char, attack))
     data = np.load(file_name)
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     ## 选择要分析的特征
     parser.add_argument(
         '-r', '--characteristics',
-        help="Characteristic(s) to use in ['kd', 'bu'] or combine ",
+        help="Characteristic(s) to use in ['kd', 'bua','buc','bue'] or combine ",
         required=True, type=str
     )
 

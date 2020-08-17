@@ -200,12 +200,12 @@ def extractAdvUncertity(args):
     # 存入.csv文件
     # 存入adv
     aleatoric = pd.DataFrame(data=aleatoric, columns=["aleatoric", ])  #
-    aleatoric.to_csv(PATH_DATA+args.attack+'//'+"x_adv_aleatoric.csv", encoding='gbk')
+    aleatoric.to_csv(PATH_DATA+args.attack+'//'+args.attack+"_x_adv_aleatoric.csv", encoding='gbk')
 
     epistemic = pd.DataFrame(data=epistemic, columns=["epistemic", ])
-    epistemic.to_csv(PATH_DATA+args.attack+'//'+"x_adv_epistemic.csv", encoding='gbk')
+    epistemic.to_csv(PATH_DATA+args.attack+'//'+args.attack+"_x_adv_epistemic.csv", encoding='gbk')
     combine = pd.DataFrame(data=combine, columns=["combine", ])
-    combine.to_csv(PATH_DATA+args.attack+'//'+"x_adv_combine.csv", encoding='gbk')
+    combine.to_csv(PATH_DATA+args.attack+'//'+args.attack+"_x_adv_combine.csv", encoding='gbk')
 
     elapsed_time = time.time() - start_time
 
@@ -218,14 +218,14 @@ def extractNormalUncertity(args):
         "Attack parameter must be either 'jsmf', 'deepfool', 'onefeature', 'fgsm'"
 
     # 正常样本+参数里攻击路径
-    MareWareTestset_from_csv =MareWareDataset('.//datafinal//X_normal.csv','.//datafinal//Y_normal.csv',transformations)
+    MareWareTestset_from_csv =MareWareDataset(PATH_DATA+args.attack+'//'+args.attack+'_200_200_X_normal.csv',PATH_DATA+args.attack+'//'+args.attack+'_200_200_Y_normal.csv',transformations)
 
     test_loader = torch.utils.data.DataLoader(
         dataset=MareWareTestset_from_csv,
         batch_size=BATCH_SIZE,
         shuffle=True)
 
-    print('test data len: ', len(test_loader.dataset))
+    print('normal data len: ', len(test_loader.dataset))
 
 
 
@@ -294,12 +294,12 @@ def extractNormalUncertity(args):
     # 存入.csv文件
     # =======存入normal================
     aleatoric=pd.DataFrame(data=aleatoric,columns=["aleatoric",])#
-    aleatoric.to_csv(".//featuresfinal//x_normal_aleatoric.csv",encoding='gbk')
+    aleatoric.to_csv(PATH_DATA+args.attack+'//'+args.attack+"_x_normal_aleatoric.csv",encoding='gbk')
 
     epistemic=pd.DataFrame(data=epistemic,columns=["epistemic",])
-    epistemic.to_csv(".//featuresfinal//x_normal_epistemic.csv",encoding='gbk')
+    epistemic.to_csv(PATH_DATA+args.attack+'//'+args.attack+"_x_normal_epistemic.csv",encoding='gbk')
     combine=pd.DataFrame(data=combine,columns=["combine",])
-    combine.to_csv(".//featuresfinal//x_normal_combine.csv",encoding='gbk')
+    combine.to_csv(PATH_DATA+args.attack+'//'+args.attack+"_x_normal_combine.csv",encoding='gbk')
 
     elapsed_time = time.time() - start_time
 
