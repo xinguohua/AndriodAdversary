@@ -83,7 +83,7 @@ def detect(args):
     print("LR Detector on [ train_attack: %s, test_attack: %s] with:" %
                                         (args.attack, args.test_attack))
     lr = train_lr(X_train, Y_train)
-    #joblib.dump(lr,"logistic_kd_bu.model")  # 加载模型,会保存该model文件
+    joblib.dump(lr,"logistic_allfeatures.model")  # 加载模型,会保存该model文件
 
     ## Evaluate detector
     y_pred = lr.predict_proba(X_test)[:, 1]

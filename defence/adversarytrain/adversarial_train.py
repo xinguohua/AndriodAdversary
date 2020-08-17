@@ -67,8 +67,12 @@ if __name__ == "__main__":
                          dtype=np.float32)
     advdlabel = np.loadtxt(open("..//..//data//adversarytrain//fgsm_200_200_Y_adv.csv", "rb"), delimiter=",",
                            skiprows=0, dtype=np.float32)
-    advdata = np.matrix(advdata)
-    advdlabel = np.matrix(advdlabel).T
+    # print("advdata", advdata.shape)
+    # print("advlabel", advdlabel.shape)
+    advdata = np.matrix(advdata)[:int(advdata.shape[0]*0.4),:]
+    advdlabel = np.matrix(advdlabel).T[:int(advdlabel.shape[0]*0.4),:]
+    # print("advdata", advdata.shape)
+    # print("advlabel", advdlabel.shape)
     #合并对抗样本
     val_data = np.concatenate((data, advdata), axis=0)
     val_labels = np.concatenate((labels, advdlabel), axis=0)

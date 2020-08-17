@@ -26,7 +26,18 @@
 
 一共训练了两个模型 adversarial_jsmf_model.h5 adversarial_jsmf_model.h5
 
-每个模型运行下平均不同的攻击测试样本得到指标
+每个模型运行下不同的攻击测试样本得到指标
+
+## evaluate_distillation.py
+
+评价蒸馏的模型
+
+一共训练了两个模型 /malwareclassification/models/distillation_model.h5
+
+每个模型运行下不同的攻击测试样本得到指标
+
+## evaluate_ensemble.py
+评价多模型整合
 
 # 二 data
 数据文件夹
@@ -110,6 +121,11 @@ DNN模型训练了13种架构
 评价所有机器学习和DNN架构
 
 选出三种架构的DNN架构，准确率高的，FNR低的，介于两者之间的。
+
+## defensive_distillation.py
+
+训练蒸馏模型保存到models/distillation_model.h5
+过程中得到distilled-100为蒸馏模型  distilled-100初始模型 distilled-100_teacher教师模型
 
 
 # 四 oneFeature文件夹(针对200_200以后换架构)
@@ -448,19 +464,29 @@ Analyze/evaluate_adversarytrain.py
 
 ![](imgs/在训练评价.png) 
 
-* 第二种攻击模式 secondattack**** （难待突破，开发）
-* 重新设置bandwith*** （难待突破，调试）
+## 11 训练&&评价蒸馏模型
+运行defensive_distillation.py在T=150情况下
+
+训练蒸馏模型保存到models/distillation_model.h5
+
+运行evaluate_distillation.py
+
+每个模型运行下不同的攻击测试样本得到指标
+
+![](imgs/蒸馏评价.png) 
+
+## 	12 ensemble
+对不同攻击样本预测，联合分类器的结果
+ 
+
 * detect_and_detect.py（开发）
 	* 经过检测器 对抗样本--->恶性 
 				非对抗样本
 						--->分类器---->良性
-								 ---->恶性		
-				
+								 ---->恶性	
 
-* 不同防御方法的比较
-
-
-
+* 第二种攻击模式 secondattack**** （难待突破，开发）
+* 重新设置bandwith*** （难待突破，调试）
 
 
 
