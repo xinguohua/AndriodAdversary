@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f3c1829-745c-41d4-bf7d-c9129f36d44d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deepfool/sa/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fgsmattack/sa/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fgsmattack/tutorials/tutorial_fgsm_k.py" beforeDir="false" afterPath="$PROJECT_DIR$/fgsmattack/tutorials/tutorial_fgsm_k.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oneFeature/sa/README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="2f3c1829-745c-41d4-bf7d-c9129f36d44d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,15 +452,15 @@
       <workItem from="1597204543926" duration="66624000" />
       <workItem from="1597369566802" duration="40052000" />
       <workItem from="1597537528223" duration="41294000" />
-      <workItem from="1597624107765" duration="58741000" />
+      <workItem from="1597624107765" duration="59073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246463000" />
+    <option name="totallyTimeSpent" value="246795000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24262735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

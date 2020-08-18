@@ -286,13 +286,6 @@ tutorials/oneFeatureattackall_second.py 生成第二种攻击模型下的对抗�
 
 	
 ![](imgs/features.png) 
-* 改攻击算法的输入还原输出
-1 记录不能更改的特征对应的值A feature_names.csv
-先找索引，记录值
-	
-2 将这些不能更改的值设置成1进入
-
-3 攻击完在将不能更改的值由1还原成A
 
 
 # 九 defence文件夹(只针对200_200一个架构)
