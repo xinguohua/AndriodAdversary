@@ -1,4 +1,4 @@
-## Research on Android malware detection based on ML models & the weakness of DNNs in adversarial examples.
+## Android Adversary for DNN
 
 
 # 一 Analyze
@@ -273,8 +273,17 @@ JSMF_200_200__Y_begin.csv
 为后续在训练提供样本
 
 
-# 八 第二种攻击模式 secondattack**** （难待突破）
-* featurenames.csv筛选哪些特征(code）不能攻击
+# 八 第二种攻击模式 secondattack
+* data/codefeature.xls筛选哪些特征(code）不能攻击
+## deepfool
+tutorials/deepfoolattackall_second.py 生成第二种攻击模型下的对抗样本
+## fgsmattak
+tutorials/fgsmattackall_second.py 生成第二种攻击模型下的对抗样本
+## jsmf
+attackall_jsmf_second.py 生成第二种攻击模型下的对抗样本
+## onefeature
+tutorials/oneFeatureattackall_second.py 生成第二种攻击模型下的对抗样本
+
 	
 ![](imgs/features.png) 
 * 改攻击算法的输入还原输出
@@ -376,7 +385,18 @@ adversarial_jsmf_model.h5
 * 不同架构DNN重复上述操作 换加载模型 得到所有表的数据
 
 
-## 3 第二种攻击模式重复上述操作（带突破）
+## 3 第二种攻击模式重复上述操作
+
+## deepfool
+tutorials/deepfoolattackall_second.py 生成第二种攻击模型下的对抗样本
+## fgsmattak
+tutorials/fgsmattackall_second.py 生成第二种攻击模型下的对抗样本
+## jsmf
+attackall_jsmf_second.py 生成第二种攻击模型下的对抗样本
+## onefeature
+tutorials/oneFeatureattackall_second.py 生成第二种攻击模型下的对抗样本
+
+得到平均扰动的图和攻击模型准确率
 
 ## 4 提取不同攻击对应的对抗样本的特征kd,lid
 extract_characteristics.py
@@ -499,8 +519,8 @@ FNR:原始DNN的FNR+detector的1-P
 
 
 
-* 第二种攻击模式 secondattack**** （难待突破，开发）
-* 重新设置bandwith*** （难待突破，调试）
+
+
 
 
 

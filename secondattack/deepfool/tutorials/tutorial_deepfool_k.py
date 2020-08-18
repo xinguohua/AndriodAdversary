@@ -29,9 +29,10 @@ import numpy as np
 from PIL import Image
 #pip install Pillow
 
-from fgsmattack.advbox.adversary import Adversary
-from fgsmattack.advbox.attacks.deepfool import DeepFoolAttack
-from fgsmattack.advbox.models.keras import KerasModel
+from secondattack.deepfool.advbox.adversary import Adversary
+from secondattack.deepfool.advbox.attacks.deepfool import DeepFoolAttack
+from secondattack.deepfool.advbox.models.keras import KerasModel
+
 
 import tensorflow as tf
 
@@ -46,14 +47,14 @@ def main():
     keras.backend.set_learning_phase(0)
 
     #加载模型
-    model = tf.keras.models.load_model('..//..//malwareclassification//models//best_model_200_200.h5')
+    model = tf.keras.models.load_model('..//..//..//malwareclassification//models//best_model_200_200.h5')
 
     #打印模型信息
     logging.info(model.summary())
 
 
     #读入一个样本数据
-    data = np.loadtxt(open("..//..//data//onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
+    data = np.loadtxt(open("..//..//..//data//onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
     data=np.matrix(data)
     print(data)
 
@@ -80,7 +81,7 @@ def main():
         featurefqueezing_bit_depth=1)
 
     attack = DeepFoolAttack(m)
-    attack_config = {"iterations": 200, "overshoot": 10}
+    attack_config = {"iterations": 200, "overshoot": 5}
 
     adversary = Adversary(data,None)
 
@@ -89,9 +90,9 @@ def main():
 
     # deepfool targeted attack
     adversary,featurenumber,m,n = attack(adversary, **attack_config)
-
     # featurenumber为扰动个数
     print(featurenumber)
+
     if adversary.is_successful():
         # 得到对抗样本<class 'numpy.ndarray'>
         print(adversary.adversarial_example[0])
@@ -103,7 +104,7 @@ def main():
 
 
 
-    print("fgsm target attack done")
+    print("second deepfool target attack done")
 
 
 

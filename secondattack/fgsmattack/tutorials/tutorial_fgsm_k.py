@@ -29,9 +29,9 @@ import numpy as np
 from PIL import Image
 #pip install Pillow
 
-from fgsmattack.advbox.adversary import Adversary
-from fgsmattack.advbox.attacks.deepfool import DeepFoolAttack
-from fgsmattack.advbox.models.keras import KerasModel
+from secondattack.fgsmattack.advbox.adversary import Adversary
+from secondattack.fgsmattack.advbox.attacks.deepfool import DeepFoolAttack
+from secondattack.fgsmattack.advbox.models.keras import KerasModel
 
 import tensorflow as tf
 
@@ -46,14 +46,14 @@ def main():
     keras.backend.set_learning_phase(0)
 
     #加载模型
-    model = tf.keras.models.load_model('..//..//malwareclassification//models//best_model_200_200.h5')
+    model = tf.keras.models.load_model('..//..//..//malwareclassification//models//best_model_200_200.h5')
 
     #打印模型信息
     logging.info(model.summary())
 
 
     #读入一个样本数据
-    data = np.loadtxt(open("..//..//data//onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
+    data = np.loadtxt(open("..//..//..//data//onerow.csv","rb"), delimiter=",", skiprows=0, dtype=np.float32)
     data=np.matrix(data)
     print(data)
 
@@ -103,7 +103,7 @@ def main():
 
 
 
-    print("fgsm target attack done")
+    print("second fgsm target attack done")
 
 
 
