@@ -13,7 +13,7 @@ from sklearn.externals import joblib
 ATTACKS = ['jsmf', 'deepfool', 'onefeature', 'fgsm' ]
 CHARACTERISTICS = ['kd','lid', 'bua','buc','bue']
 PATH_DATA = "..//..//data//characteristic//"
-PATH_IMAGES = "plots/"
+
 
 def load_characteristics(attack, characteristics):
     """
@@ -83,15 +83,17 @@ def detect(args):
     print("LR Detector on [ train_attack: %s, test_attack: %s] with:" %
                                         (args.attack, args.test_attack))
     lr = train_lr(X_train, Y_train)
-    joblib.dump(lr,"logistic_allfeatures.model")  # 加载模型,会保存该model文件
+    #joblib.dump(lr,"logistic_allfeatures.model")  # 加载模型,会保存该model文件
 
     ## Evaluate detector
     y_pred = lr.predict_proba(X_test)[:, 1]
     y_label_pred = lr.predict(X_test)
     
     # AUC
-    _, _, auc_score = compute_roc(Y_test, y_pred, plot=False)
+    _,_, auc_score = compute_roc(Y_test, y_pred, plot=False)
+
     precision = precision_score(Y_test, y_label_pred)
+    print("1-P",1-precision)
     recall = recall_score(Y_test, y_label_pred)
 
     y_label_pred = lr.predict(X_test)

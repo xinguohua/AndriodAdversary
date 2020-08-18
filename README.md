@@ -478,12 +478,26 @@ Analyze/evaluate_adversarytrain.py
 ## 	12 ensemble
 对不同攻击样本预测，联合分类器的结果
  
+## 13 detector 评价
+用detector的评价指标乘以原始dnn的评价
+![](imgs/detector评价.png) 
 
-* detect_and_detect.py（开发）
+![](imgs/detector评价图.png) 
+
+FNR:原始DNN的FNR+detector的1-P
+
+误分类率 1-detector的准确率
+
+准确率 两个准确率相乘
+
+
+* detect_and_detect.py
 	* 经过检测器 对抗样本--->恶性 
 				非对抗样本
 						--->分类器---->良性
 								 ---->恶性	
+
+
 
 * 第二种攻击模式 secondattack**** （难待突破，开发）
 * 重新设置bandwith*** （难待突破，调试）
