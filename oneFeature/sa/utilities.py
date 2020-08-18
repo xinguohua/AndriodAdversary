@@ -31,7 +31,7 @@ def plotgraph(x,y,name,save_name):
 
 #画每条曲线 再求平均
 def plotavegraph(x,y,name,save_name):
-    sum=np.zeros(len(x[1]))
+    sum=np.zeros(len(x[0]))
     for i in range(len(x)):
         plt.plot(x[i],y[i])
         sum=sum+np.array(y[i])
