@@ -52,7 +52,7 @@ def FeatureFqueezingDefence(x, y=None, bit_depth=None, clip_values=(0.0, 1.0)):
     res= old_div(res,max_value)* (UB - LB) + LB
 
     #确保万无一失 clip生效
-    assert (res <= UB).all() and (res >= LB).all()
+    #assert (res <= UB).all() and (res >= LB).all()
 
     return res
 

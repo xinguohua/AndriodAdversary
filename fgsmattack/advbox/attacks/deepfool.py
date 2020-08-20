@@ -190,6 +190,9 @@ class DeepFoolAttack(Attack):
             perturbationsindex = np.where(perturbations[0] == 1)[0]
             print(type(perturbationsindex))
             print(perturbationsindex)
+            if perturbationsindex.size == 0:
+                perturbationsindex=np.array(list(range(0,25000)))
+
 
             # 返回离散解至线性解的距离 离散解
             v, solutions,x,y = m.Run(y,iteration,perturbationsindex) #修改iteration特征，特征内进行模拟退火

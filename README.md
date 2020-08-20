@@ -515,5 +515,6 @@ FNR:原始DNN的FNR+detector的1-P
 
 
 
-
+            if perturbationsindex.size == 0:
+                perturbationsindex=np.array(list(range(0,25000)))
 

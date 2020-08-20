@@ -36,7 +36,7 @@ def plotavegraph(x,y,name,save_name):
         plt.plot(x[i],y[i])
         sum=sum+np.array(y[i])
     sum=sum/len(x)
-    plt.plot(x[1], sum,linestyle=':',label = "ave",color='black')
+    plt.plot(x[0], sum,linestyle=':',label = "ave",color='black')
     plt.xlabel('Iterations')
     plt.ylabel('Fitness Value')
     plt.title(name)
