@@ -194,7 +194,9 @@ def extractAdvUncertity(args):
             # print(varmean)
             aleatoric.append(varmean)
 
-            uncert = varmean + meanvar100[id]
+            # uncert = varmean + meanvar100[id]
+            #偶然不确定小所以再结合的时候取相反数
+            uncert = -varmean + meanvar100[id]
             combine.append(uncert)
 
     # 存入.csv文件

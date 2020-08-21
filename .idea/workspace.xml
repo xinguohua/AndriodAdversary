@@ -4,21 +4,8 @@
     <list default="true" id="2f3c1829-745c-41d4-bf7d-c9129f36d44d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deepfool/advbox/defences/feature_squeezing.py" beforeDir="false" afterPath="$PROJECT_DIR$/deepfool/advbox/defences/feature_squeezing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deepfool/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/deepfool/sa/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fgsmattack/advbox/attacks/deepfool.py" beforeDir="false" afterPath="$PROJECT_DIR$/fgsmattack/advbox/attacks/deepfool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fgsmattack/advbox/defences/feature_squeezing.py" beforeDir="false" afterPath="$PROJECT_DIR$/fgsmattack/advbox/defences/feature_squeezing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fgsmattack/sa/Plots/FitnessVIterations_AllMalwarefgsmfeaturesbestSA__sa_x_fitnees_pic.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/fgsmattack/sa/Plots/FitnessVIterations_AllMalwarefgsmfeaturesbestSA__sa_x_fitnees_pic.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fgsmattack/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/fgsmattack/sa/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oneFeature/advbox/defences/feature_squeezing.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/advbox/defences/feature_squeezing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oneFeature/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/oneFeature/sa/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/deepfool/advbox/defences/feature_squeezing.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/deepfool/advbox/defences/feature_squeezing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/deepfool/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/deepfool/sa/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/fgsmattack/advbox/attacks/deepfool.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/fgsmattack/advbox/attacks/deepfool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/fgsmattack/advbox/defences/feature_squeezing.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/fgsmattack/advbox/defences/feature_squeezing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/fgsmattack/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/fgsmattack/sa/utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/oneFeature/advbox/defences/feature_squeezing.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/oneFeature/advbox/defences/feature_squeezing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/secondattack/oneFeature/sa/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondattack/oneFeature/sa/utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/defence/detector/Uncertainty/extract_conbineFuture.py" beforeDir="false" afterPath="$PROJECT_DIR$/defence/detector/Uncertainty/extract_conbineFuture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/defence/detector/extract_characteristics.py" beforeDir="false" afterPath="$PROJECT_DIR$/defence/detector/extract_characteristics.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +25,7 @@
     <SUITE FILE_PATH="coverage/AndriodAdversary$defensive_distillation.coverage" NAME="defensive_distillation Coverage Results" MODIFIED="1597668003744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$nn_grid_search.coverage" NAME="nn_grid_search Coverage Results" MODIFIED="1597041165058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$fgsmattackall.coverage" NAME="fgsmattackall Coverage Results" MODIFIED="1597754445835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fgsmattack/tutorials" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$extract_characteristics.coverage" NAME="extract_characteristics Coverage Results" MODIFIED="1597635254234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/defence/detector" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$extract_characteristics.coverage" NAME="extract_characteristics Coverage Results" MODIFIED="1598008161812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/defence/detector" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_fgsm_k__2_.coverage" NAME="tutorial_fgsm_k (2) Coverage Results" MODIFIED="1597371669179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient/tutorials" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1597728475542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/secondattack/oneFeature/tutorials" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$tutorial_fgsm_k.coverage" NAME="tutorial_fgsm_k Coverage Results" MODIFIED="1597731451723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/secondattack/fgsmattack/tutorials" />
@@ -60,7 +47,7 @@
     <SUITE FILE_PATH="coverage/AndriodAdversary$oneFeatureattackall.coverage" NAME="oneFeatureattackall Coverage Results" MODIFIED="1597749323252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/oneFeature/tutorials" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$train_pytorh_model.coverage" NAME="train_pytorh_model Coverage Results" MODIFIED="1597565001036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/defence/detector/Uncertainty" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$evaluate_adv.coverage" NAME="evaluate_adv Coverage Results" MODIFIED="1597456230284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analyze" />
-    <SUITE FILE_PATH="coverage/AndriodAdversary$detect_adv_examples.coverage" NAME="detect_adv_examples Coverage Results" MODIFIED="1597715870038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/defence/detector" />
+    <SUITE FILE_PATH="coverage/AndriodAdversary$detect_adv_examples.coverage" NAME="detect_adv_examples Coverage Results" MODIFIED="1598002121935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/defence/detector" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$characteristicsAnalyse.coverage" NAME="characteristicsAnalyse Coverage Results" MODIFIED="1597632311492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Analyze" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$attackall.coverage" NAME="attackall Coverage Results" MODIFIED="1597371927773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fgsmattack/tutorials" />
     <SUITE FILE_PATH="coverage/AndriodAdversary$jsma.coverage" NAME="jsma Coverage Results" MODIFIED="1597405789763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/malwareclassification" />
@@ -99,17 +86,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fgsmattack/advbox/attacks/deepfool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="5307">
               <caret line="194" selection-start-line="194" selection-end-line="194" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fgsmattack/sa/utilities.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="83">
-              <caret line="38" column="65" lean-forward="true" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+              <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/defence/detector/Uncertainty/extract_conbineFuture.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="197" column="31" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/defence/detector/extract_characteristics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="252" column="36" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/defence/detector/detect_adv_examples.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-156">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +137,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fgsmattack/tutorials/fgsmattackall.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3944">
+            <state relative-caret-position="145">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
@@ -177,8 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/defence/adversarytrain/adversarial_train.py" />
-        <option value="$PROJECT_DIR$/malwareclassification/defensive_distillation.py" />
         <option value="$PROJECT_DIR$/Analyze/evaluate_distillation.py" />
         <option value="$PROJECT_DIR$/jsmf/attackall_jsmf.py" />
         <option value="$PROJECT_DIR$/Analyze/evaluate_ensemble.py" />
@@ -228,14 +246,16 @@
         <option value="$PROJECT_DIR$/secondattack/fgsmattack/advbox/defences/feature_squeezing.py" />
         <option value="$PROJECT_DIR$/fgsmattack/advbox/defences/feature_squeezing.py" />
         <option value="$PROJECT_DIR$/secondattack/oneFeature/advbox/defences/feature_squeezing.py" />
+        <option value="$PROJECT_DIR$/defence/detector/Uncertainty/extract_conbineFuture.py" />
+        <option value="$PROJECT_DIR$/defence/detector/extract_characteristics.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="23" />
-    <option name="y" value="12" />
-    <option name="width" value="1630" />
-    <option name="height" value="1040" />
+    <option name="x" value="-330" />
+    <option name="y" value="21" />
+    <option name="width" value="1890" />
+    <option name="height" value="930" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -248,6 +268,41 @@
             <path>
               <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
               <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="characteristic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="jsmf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="defence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="defence" type="462c0819:PsiDirectoryNode" />
+              <item name="detector" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndriodAdversary" type="462c0819:PsiDirectoryNode" />
+              <item name="defence" type="462c0819:PsiDirectoryNode" />
+              <item name="detector" type="462c0819:PsiDirectoryNode" />
+              <item name="Uncertainty" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AndriodAdversary" type="b2602c69:ProjectViewProjectNode" />
@@ -311,18 +366,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\data\jsmf" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\data" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack\deepfool\tutorials" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack\fgsmattack\tutorials" />
+      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack\oneFeature\tutorials" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\安全课程\android detection\finally\AndriodAdversary\jsmf" />
       <recent name="D:\安全课程\android detection\finally\AndriodAdversary\fgsmattack\tutorials" />
       <recent name="D:\安全课程\android detection\finally\AndriodAdversary\data" />
       <recent name="D:\安全课程\android detection\finally\AndriodAdversary\defence\adversarytrain" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\data" />
-      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack\deepfool\tutorials" />
-      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack\fgsmattack\tutorials" />
-      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack\oneFeature\tutorials" />
-      <recent name="D:\安全课程\android detection\finally\AndriodAdversary\secondattack" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -337,7 +392,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.fgsmattackall">
+  <component name="RunManager" selected="Python.extract_characteristics">
     <configuration name="attackall_jsmf_second" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndriodAdversary" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -374,7 +429,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/defence/detector/detect_adv_examples.py" />
-      <option name="PARAMETERS" value="-a jsmf -r bua,bue,buc,kd,lid -t fgsm" />
+      <option name="PARAMETERS" value="-a jsmf -r lid -t jsmf" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="extract_characteristics" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AndriodAdversary" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/defence/detector" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/defence/detector/extract_characteristics.py" />
+      <option name="PARAMETERS" value="-a jsmf -r lid" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -426,28 +503,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tutorial_jsmf_k (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AndriodAdversary" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jsmf" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsmf/tutorial_jsmf_k.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="tutorial_jsmf_k" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AndriodAdversary" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -473,18 +528,18 @@
     <list>
       <item itemvalue="Python.detect_adv_examples" />
       <item itemvalue="Python.tutorial_jsmf_k" />
-      <item itemvalue="Python.tutorial_jsmf_k (1)" />
       <item itemvalue="Python.attackall_jsmf_second" />
       <item itemvalue="Python.oneFeatureattackall" />
       <item itemvalue="Python.fgsmattackall" />
+      <item itemvalue="Python.extract_characteristics" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.extract_characteristics" />
         <item itemvalue="Python.fgsmattackall" />
         <item itemvalue="Python.oneFeatureattackall" />
         <item itemvalue="Python.attackall_jsmf_second" />
         <item itemvalue="Python.tutorial_jsmf_k" />
-        <item itemvalue="Python.tutorial_jsmf_k (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -505,21 +560,23 @@
       <workItem from="1597369566802" duration="40052000" />
       <workItem from="1597537528223" duration="41294000" />
       <workItem from="1597624107765" duration="65047000" />
+      <workItem from="1597929456421" duration="599000" />
+      <workItem from="1597998307560" duration="4523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252769000" />
+    <option name="totallyTimeSpent" value="257891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24262735" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24932976" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32714286" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5779037" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4362606" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4036827" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -630,36 +687,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fgsmattack/sa/AnnealingFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fgsmattack/sa/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="63" column="55" lean-forward="true" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fgsmattack/sa/Algorithms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1421">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secondattack/fgsmattack/advbox/attacks/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-609">
-          <folding>
-            <element signature="e#618#645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/secondattack/fgsmattack/advbox/defences/feature_squeezing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-950">
@@ -725,15 +752,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secondattack/fgsmattack/tutorials/fgsmattackall.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-700">
-          <folding>
-            <element signature="e#713#750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/secondattack/fgsmattack/tutorials/fgsmattackall.py" />
     <entry file="file://$PROJECT_DIR$/secondattack/fgsmattack/sa/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -827,14 +846,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secondattack/deepfool/sa/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-174" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/secondattack/deepfool/sa/README.md" />
     <entry file="file://$PROJECT_DIR$/secondattack/fgsmattack/tutorials/fgsmattackall_second.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -944,30 +956,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secondattack/jsmf/Y_train.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/secondattack/jsmf/X_train.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/secondattack/jsmf/Y_train.csv" />
+    <entry file="file://$PROJECT_DIR$/secondattack/jsmf/X_train.csv" />
     <entry file="file://$PROJECT_DIR$/data/Y_train.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="29">
           <caret line="1" selection-start-line="1" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/X_train.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/X_train.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jsmf/tutorial_jsmf_k.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1051,24 +1056,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fgsmattack/tutorials/fgsmattackall.py">
+    <entry file="file://$PROJECT_DIR$/fgsmattack/advbox/attacks/deepfool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3944">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="5307">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fgsmattack/advbox/attacks/deepfool.py">
+    <entry file="file://$PROJECT_DIR$/fgsmattack/tutorials/fgsmattackall.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="145">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fgsmattack/sa/utilities.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
-          <caret line="38" column="65" lean-forward="true" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/jsmf/jsmf_200_200_Y_normal.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/defence/detector/Uncertainty/extract_conbineFuture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="197" column="31" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/defence/detector/detect_adv_examples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/defence/detector/extract_characteristics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="252" column="36" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -250,6 +250,6 @@ if __name__ == "__main__":
         required=False, type=int
     )
     parser.set_defaults(batch_size=100)
-    parser.set_defaults(k_nearest=5)
+    parser.set_defaults(k_nearest=50)
     args = parser.parse_args()
     main(args)

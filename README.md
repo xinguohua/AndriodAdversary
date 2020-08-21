@@ -400,7 +400,7 @@ extract_characteristics.py
 
 得到data/characteristic下八个文件
 
-## 5 提取不同攻击对应的对抗样本的三种确定性特征
+## 5 提取不同攻击对应的对抗样本的三种确定性特征(bua,bue,buc=bue-bua)
 extract_combineFuture.py
 
 不停的换参数'jsmf', 'deepfool', 'onefeature', 'fgsm' 在对应data/攻击文件夹得到 得到六种不确定性文件 攻击_x_adv_不确定性.csv、攻击_x_normal_不确定性.csv
@@ -413,6 +413,7 @@ featuretoNpy.py
 
 ## 6 分析kd,bu在不同攻击下的区分效果
 运行 characteristicsAnalyse.py
+
 
 -a fgsm -r kd，bua,buc,bue
 
@@ -428,6 +429,7 @@ kd,bua,buc,bue
 ![](imgs/区分特征.png) 
 
 ## 7 检测分类器训练和检测
+运行defence/detector/detect_adv_examples.py
 
 训练集攻击
 
