@@ -270,15 +270,15 @@ if __name__ == "__main__":
 
 
     # model trained on 1500 samples
-    trained_model = tf.keras.models.load_model('..//..//malwareclassification//models//best_model_200_200.h5')
+    trained_model = tf.keras.models.load_model('..//malwareclassification//models//best_model_200_200.h5')
 
 
     averageChanges = 0
 
 
     #0，1型数据 加载测试数据
-    val_data = np.loadtxt(open("..//..//data//x_train01.csv", "rb"), delimiter=",", skiprows=0,dtype=np.int32)
-    val_labels = np.loadtxt(open("..//..//data//y_train01.csv", "rb"), delimiter=",", skiprows=0,dtype=np.int32)
+    val_data = np.loadtxt(open("..//data//x_train01.csv", "rb"), delimiter=",", skiprows=0,dtype=np.int32)
+    val_labels = np.loadtxt(open("..//data//y_train01.csv", "rb"), delimiter=",", skiprows=0,dtype=np.int32)
     # print(val_labels)
 
     average_changes = 0
@@ -378,12 +378,12 @@ if __name__ == "__main__":
     if amount_malwares > 0:
         averageChanges += (average_changes / float(amount_malwares))
     print("Distortion:", averageChanges)
-    np.savetxt('..//..//data//adversarytrain//jsmf_200_200_X_normal.csv', X_normal, delimiter = ',')
-    np.savetxt('..//..//data//adversarytrain//jsmf_200_200_Y_normal.csv', Y_normal, delimiter = ',')
-    np.savetxt('..//..//data//adversarytrain//jsmf_200_200_X_adv.csv', X_adv, delimiter = ',')
-    np.savetxt('..//..//data//adversarytrain//jsmf_200_200_Y_adv.csv', Y_adv, delimiter = ',')
-    np.savetxt('..//..//data//adversarytrain//jsmf_200_200_X_begin.csv', X_begin, delimiter=',')
-    np.savetxt('..//..//data//adversarytrain//jsmf_200_200_Y_begin.csv', Y_begin, delimiter=',')
+    np.savetxt('..//data//adversarytrain//jsmf_200_200_X_normal.csv', X_normal, delimiter = ',')
+    np.savetxt('..//data//adversarytrain//jsmf_200_200_Y_normal.csv', Y_normal, delimiter = ',')
+    np.savetxt('..//data//adversarytrain//jsmf_200_200_X_adv.csv', X_adv, delimiter = ',')
+    np.savetxt('..//data//adversarytrain//jsmf_200_200_Y_adv.csv', Y_adv, delimiter = ',')
+    np.savetxt('..//data//adversarytrain//jsmf_200_200_X_begin.csv', X_begin, delimiter=',')
+    np.savetxt('..//data//adversarytrain//jsmf_200_200_Y_begin.csv', Y_begin, delimiter=',')
     print("保存成功")
 
 
