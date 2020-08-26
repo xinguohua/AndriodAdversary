@@ -472,16 +472,18 @@ kd，lid,bua,bue,buc
 ![](imgs/检测.png) 
 
 
-## 8 攻击训练样本得到fgsm,jsmf两种训练样本的对抗样本
+## 8 攻击训练样本得到fgsm(不用),jsmf，onefeature两种训练样本的对抗样本
 运行这两种攻击方法得到相应的训练数据的对抗样本 
 
 存放在data/adversarytrain
 
 
-fgsm/tutorials/fgsm_attacktrainset.py
+fgsm/tutorials/fgsm_attacktrainset.py(不用)
 
 
 jsmf/tutorials/jsmf_attacktrainset.py
+
+onefeature/tutorials/onefeature_attacktrainset.py
 
 
 ## 9 训练两种对抗样本模型（jsmf,onefeature）
