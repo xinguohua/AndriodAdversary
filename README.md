@@ -91,6 +91,9 @@ onefeature_200_200_X_adv.csv onefeature_200_200_Y_adv.csv
 onefeature_200_200__X_begin.csv onefeature_200_200__Y_begin.csv
 ## features
 feature_names.csv
+## adversarytrain
+jsmf和onefeature 针对训练集的对抗样本
+
 
 # 三 malwareclassification
 
@@ -171,8 +174,9 @@ DNN模型训练了13种架构
     	* 多个样本进行比较
 
 	* 不同攻击重复画即可（以后）
-	
-
+### oneFeature_attacktrainset.py	
+运行这攻击方法得到相应的训练数据的对抗样本 存放在data/adversarytrain中
+为后续在训练提供对抗样本
 # 五 deepfool文件夹(针对200_200以后换架构)
 实施deepfool+oneFeature攻击 
 ## tutorials文件夹
@@ -480,11 +484,11 @@ fgsm/tutorials/fgsm_attacktrainset.py
 jsmf/tutorials/jsmf_attacktrainset.py
 
 
-## 9 训练两种对抗样本模型（jsmf,fgsm）
+## 9 训练两种对抗样本模型（jsmf,onefeature）
 运行defence/adversarytrain/adversarial_train.py
 
 操作三次 
-* 更改读取数据 jsmf/fgsm
+* 更改读取数据 jsmf/onefeature
 * 修改adv的比例0.08、0.27、0.86
 * 保存模型名字30，100，300
  
@@ -495,10 +499,10 @@ jsmf/tutorials/jsmf_attacktrainset.py
 	* 以比例advdata*0.27 100(实际混入98) 加入对抗样本  得到模型 adversarial_jsmf100_model.h5
 	* 以比例advdata*0.86 300(实际混入299) 加入对抗样本  得到模型 adversarial_jsmf300_model.h5
 
-* 将得到的fgsm和与训练数据混合训练
-	* 分别以比例advdata*0.08 30（实际混入34）加入对抗样本 得到模型 adversarial_fgsm30_model.h5
-	* 以比例advdata*0.29 100(实际混入98) 加入对抗样本  得到模型 adversarial_fgsm100_model.h5
-	* 以比例advdata*0.82 300(实际混入299) 加入对抗样本  得到模型 adversarial_fgsm300_model.h5
+* 将得到的onefeature和与训练数据混合训练
+	* 分别以比例advdata*0.08 30（实际混入34）加入对抗样本 得到模型 adversarial_onefeature30_model.h5
+	* 以比例advdata*0.29 100(实际混入98) 加入对抗样本  得到模型 adversarial_onefeature100_model.h5
+	* 以比例advdata*0.82 300(实际混入299) 加入对抗样本  得到模型 adversarial_onefeature300_model.h5
 
 
 

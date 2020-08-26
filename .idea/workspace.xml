@@ -268,7 +268,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-330" />
     <option name="y" value="20" />
     <option name="width" value="1890" />
@@ -585,23 +585,22 @@
       <workItem from="1597929456421" duration="599000" />
       <workItem from="1597998307560" duration="4523000" />
       <workItem from="1598057151544" duration="625000" />
-      <workItem from="1598085087148" duration="2141000" />
+      <workItem from="1598085087148" duration="2738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260657000" />
+    <option name="totallyTimeSpent" value="261254000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25603217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32714286" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4362606" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4362606" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4036827" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
